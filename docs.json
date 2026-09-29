@@ -42,6 +42,7 @@
       {
         "group": "Policies & Approvals",
         "pages": [
+          "policies-and-approvals/approvals",
           "policies-and-approvals/ios-authenticator",
           "policies-and-approvals/quorums",
           "policies-and-approvals/policies"
