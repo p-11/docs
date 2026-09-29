@@ -1,0 +1,123 @@
+---
+title: "Approvals"
+description: "How Strongpoint holds a sensitive operation until enough of your approvers have signed off on it."
+---
+
+Approvals hold a sensitive operation until enough of your approvers have agreed to it.
+
+An approval asks the people you choose to sign off before Strongpoint carries out an operation. This page explains what starts one, how your approvers respond, and when the operation goes ahead.
+
+## Before you start
+
+- Approvers respond in the Strongpoint Authenticator app on an iPhone, so each approver needs an enrolled device. See [iOS Authenticator](/policies-and-approvals/ios-authenticator).
+- You need the Owner or Admin role to change approval policies. See [Policies](/policies-and-approvals/policies).
+
+## How an approval works
+
+1. **An operation triggers a policy.** Someone starts an operation that needs approval, such as inviting a user or signing with a key. Strongpoint finds the policy for that type of operation and records its approvers and the number of approvals it requires, which is the quorum. If you edit the policy later, requests that are already open keep the old terms.
+2. **Strongpoint notifies approvers.** Strongpoint sends a push notification to each approver's iOS devices. It reads "Approval required" and shows no operation details. As an approver, you also see the request in the approvals list in the console.
+3. **Approvers review the request.** You open the Strongpoint Authenticator and sign in. The app shows the operation, who started it, the other approvers, and how many approvals the request needs.
+4. **Approvers sign a decision.** You tap **Approve** or **Reject** and confirm with Face ID or Touch ID. Your device then signs the decision with two signatures, described in [What an approver signs](#what-an-approver-signs).
+5. **Strongpoint checks each decision.** It accepts a decision only if both signatures verify, the signer is a listed approver, and the request has not expired. Each approver gets one counted decision, even with several devices.
+6. **Enough approvals arrive and the operation runs.** When enough approvals are in, Strongpoint carries out the operation and the console shows **Completed**. Approvers who have not yet responded no longer need to act.
+
+<Frame caption="Figure 1: The approvals list in the console. Each row shows how many of the required approvals it has.">
+  <img src="/images/approvals/console-needs-review.png" alt="The approvals list shows open requests, each with a progress bar showing approvals gathered against approvals required." />
+</Frame>
+
+<Frame caption="Figure 2: The review screen in the Strongpoint Authenticator. The approver sees the operation, the approvers and the number of approvals required.">
+  <img src="/images/approvals/device-review-bottom.png" alt="The review screen shows the operation details, three approvers with their decisions, and Approve and Reject buttons." style={{ maxWidth: "300px" }} />
+</Frame>
+
+The request fails, and the operation does not run, in two cases. Either no policy applies to the operation, or fewer of the named approvers are active than the policy needs. Strongpoint never falls back to a smaller quorum.
+
+Some operations use a fixed rule instead of a policy. Table 1 lists them.
+
+| Operation | Who approves |
+|---|---|
+| Sign in to the console | You, on one of your own enrolled devices (1 of 1) |
+| Invite a user, issue an enrolment token, change or remove a member's roles, archive or unarchive a custody account | The approvers and quorum in your policy for that operation |
+| Change a policy | The approvers and quorum in your policy for policy changes |
+| Admit a new device | An approver set that Strongpoint derives from your enrolled approvers. You cannot edit it |
+| Sign with a key or key ring | Every enrolled approver |
+
+*Table 1: Operations that need approval*
+
+## Quorum
+
+A quorum is written as M of N: the policy names N approvers and needs M approvals from them. M is at least 1 and no larger than N.
+
+**Example.** Your policy for inviting users names Ana, Ben and Chloe and needs 2 approvals.
+
+- When Ana approves, one of two approvals is in, so the request stays open.
+- When Ben approves, quorum is met and the invitation goes ahead. You no longer need Chloe's answer.
+
+Now suppose Ana rejects instead. The request stays open, because Ben and Chloe could still both approve. If Ben also rejects, only Chloe is left and two approvals can no longer be reached, so the request becomes **Rejected**.
+
+The example shows that one rejection does not stop a request. A rejection ends it only when quorum becomes unreachable.
+
+<Frame caption="Figure 3: The request detail panel in the console, showing the progress of a request and who has approved.">
+  <img src="/images/approvals/console-request-activity.png" alt="The Activity tab lists request progress, the approvers who have signed, and the approvers still eligible." />
+</Frame>
+
+## What an approver signs
+
+Your device signs a summary of exactly what you saw. It covers the operation, the request identifier, the expiry time, your decision, and the time you made it. A signature made for one request cannot be reused for another.
+
+Each decision carries two signatures over that summary:
+
+- **ECDSA on the P-256 curve.** This is a widely deployed classical signature scheme.
+- **ML-DSA-87.** This is a post-quantum signature scheme that NIST standardised as FIPS 204.
+
+Both signing keys sit in the iPhone's Secure Enclave, and one Face ID or Touch ID check unlocks them together. Strongpoint refuses a decision unless both signatures verify.
+
+<Frame caption="Figure 4: Face ID confirms the decision before the device signs it.">
+  <img src="/images/approvals/device-face-id.png" alt="A Verify it's you sheet asks the approver to confirm with Face ID." style={{ maxWidth: "300px" }} />
+</Frame>
+
+Sign-ins add a number check. The console shows you a number and the app shows three, and you tap the one that matches. A wrong tap makes the sign-in **Failed**.
+
+## Request statuses and timing
+
+Table 2 lists the statuses you see in the console.
+
+| Status | Meaning |
+|---|---|
+| Awaiting | The request is open and you have not responded. |
+| Gathering approvals | The request is open and you have responded. Others are still to decide. |
+| Completed | Quorum was met and the operation went ahead. |
+| Rejected | Enough approvers rejected the request that quorum can no longer be met. |
+| Expired | The approval window closed before quorum was met. |
+| Cancelled | The person who started the request withdrew it. |
+| Failed | An approval could not be completed, so quorum can no longer be met. For a sign-in, the usual cause is tapping the wrong number. |
+
+*Table 2: Request statuses in the console*
+
+Most requests stay open for 24 hours, and a sign-in stays open for 5 minutes. A policy can set a different window for an operation. Only the person who started a request can cancel it.
+
+## Limits and common mistakes
+
+- Policies match on the type of operation only. They cannot match on amount, destination or time of day.
+- Strongpoint does not stop the person who starts a request from approving it when they are a named approver. Choose your approvers with that in mind.
+- Changing a policy raises an approval of its own. The policy in force when you save the change decides who approves it.
+- You cannot remove a member who is named in a live policy. Update the policy first.
+- Do not rely on the push notification alone. A request stays in the console approvals list until it resolves, whether or not the notification arrives.
+
+## If something goes wrong
+
+- **The request fails at once.** The policy is missing, or fewer of its approvers are active than it needs. Ask an Admin to update the policy, then start the request again.
+- **You get no notification.** Check the approvals list in the console, then open the Strongpoint Authenticator. If the app still shows nothing, ask an Admin to confirm that your device is enrolled.
+- **The app refuses your decision.** Your device clock may be more than two minutes off. Turn on automatic date and time in iOS settings, then try again.
+- **A sign-in shows Failed.** The wrong number was tapped. Sign in again to start a new request.
+- **A request shows Expired.** The window closed before quorum. Start the operation again.
+
+If a problem continues, contact your organisation's Owner.
+
+## Related
+
+- [Quorums](/policies-and-approvals/quorums)
+- [Policies](/policies-and-approvals/policies)
+- [iOS Authenticator](/policies-and-approvals/ios-authenticator)
+- [Roles and permissions](/organisation/roles-and-permissions)
+
+Last reviewed 29 September 2026.
