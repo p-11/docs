@@ -31,18 +31,6 @@ An approval asks the people you choose to sign off before Strongpoint carries ou
 
 The request fails, and the operation does not run, in two cases. Either no policy applies to the operation, or fewer of the named approvers are active than the policy needs. Strongpoint never falls back to a smaller quorum.
 
-Some operations use a fixed rule instead of a policy. Table 1 lists them.
-
-| Operation | Who approves |
-|---|---|
-| Sign in to the console | You, on one of your own enrolled devices (1 of 1) |
-| Invite a user, issue an enrolment token, change or remove a member's roles, archive or unarchive a custody account | The approvers and quorum in your policy for that operation |
-| Change a policy | The approvers and quorum in your policy for policy changes |
-| Admit a new device | An approver set that Strongpoint derives from your enrolled approvers. You cannot edit it |
-| Sign with a key or key ring | Every enrolled approver |
-
-*Table 1: Operations that need approval*
-
 ## Quorum
 
 A quorum is written as M of N: the policy names N approvers and needs M approvals from them. M is at least 1 and no larger than N.
@@ -79,7 +67,7 @@ Sign-ins add a number check. The console shows you a number and the app shows th
 
 ## Request statuses and timing
 
-Table 2 lists the statuses you see in the console.
+Table 1 lists the statuses you see in the console.
 
 | Status | Meaning |
 |---|---|
@@ -91,7 +79,7 @@ Table 2 lists the statuses you see in the console.
 | Cancelled | The person who started the request withdrew it. |
 | Failed | An approval could not be completed, so quorum can no longer be met. For a sign-in, the usual cause is tapping the wrong number. |
 
-*Table 2: Request statuses in the console*
+*Table 1: Request statuses in the console*
 
 Most requests stay open for 24 hours, and a sign-in stays open for 5 minutes. A policy can set a different window for an operation. Only the person who started a request can cancel it.
 
