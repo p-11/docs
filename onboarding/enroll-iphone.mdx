@@ -1,0 +1,49 @@
+---
+title: "Enroll your iPhone"
+description: "Scan the enrollment QR code, confirm the six-digit code, and finish device enrollment for Strongpoint."
+---
+
+Enrolling your iPhone pairs the Strongpoint Authenticator with your membership. Until enrollment finishes (and any required device enrollment approval completes), you cannot use that device to approve sign-ins or operations.
+
+## Before you start
+
+- You have set up your identity in the invitation ceremony. See [Set up your identity](/onboarding/set-up-identity).
+- The Strongpoint Authenticator is installed on your iPhone. See [Download the Strongpoint Authenticator](/onboarding/download-app).
+- Stay on the console page while you scan. Identification for enrollment is time-limited; if it expires, you are sent to log in and may need a new enrollment path from your admin.
+
+## How to enroll your iPhone
+
+1. On **Enroll your iPhone**, unlock the Strongpoint Authenticator on your iPhone.
+2. In the app, scan the enrollment QR code shown in the console. The console lists this as scanning the enrollment QR code from the Strongpoint app.
+3. When the app shows a six-digit code, return to the console on **Confirm your iPhone**.
+4. Enter the six-digit code carefully, then tap **Confirm**. You get one attempt. A wrong code closes this enrollment.
+5. If your organisation requires it, wait on **Awaiting Device Enrollment Approval** while an approver approves the device in the Strongpoint Authenticator. The console updates when enrollment completes.
+6. When membership is active, you see **You're all set**. From here you use the Authenticator to log in and to make approvals. Tap **Log in to Strongpoint** to open the log-in flow.
+
+On mobile, you may also open an enrollment link that hands off into the Authenticator (`strongpoint://enrol` or the console `/enrol` landing). Prefer finishing on an iPhone; non-iPhone phones are directed to open the flow on an iPhone.
+
+## Limits and common mistakes
+
+- One wrong six-digit code closes that enrollment. Tap **Get a new QR code** (or restart enrollment) and scan again. Do not guess repeatedly.
+- The pair session can fail if the QR is spent or the server closed pairing. Use **Get a new QR code** and scan the new code.
+- Device enrollment for an already active member, or a second device, is started by an Owner or Admin from Team with **Send device enrollment**, which is also approval-gated. That is separate from the first invitation ceremony.
+- [TK: whether the first bootstrap admin can complete enrollment without a second approver is unclear from console code alone. Expect the approval wait when your organisation's policy requires it.]
+
+## If something goes wrong
+
+- **Pairing failed - incorrect 6-digit code.** Get a new QR code and set up again, or contact Strongpoint support.
+- **We could not start pairing** and the console says you already have a paired device. Tap **Log in** instead of scanning again.
+- **Request your team to issue you an enrollment.** Ask an Owner or Admin to use **Send device enrollment** from Team, then open the new email link.
+- **Awaiting Device Enrollment Approval** does not clear. Ask an approver to open the Strongpoint Authenticator and approve the device enrollment request. Check Approvals in the console if you already have access on another path.
+- **This page is not updating automatically.** Finish enrollment on your iPhone, then [log in](/onboarding/log-in).
+- **Identification expired.** Log in if you can, or ask your admin for a new enrollment link.
+
+## Related
+
+- [Download the Strongpoint Authenticator](/onboarding/download-app)
+- [Log in to the console](/onboarding/log-in)
+- [Approvals](/policies-and-approvals/approvals)
+- [iOS Authenticator](/policies-and-approvals/ios-authenticator)
+- [Onboarding](/onboarding)
+
+Last reviewed 23 October 2026.

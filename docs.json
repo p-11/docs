@@ -20,7 +20,19 @@
         "group": "Getting started",
         "pages": [
           "getting-started/basics",
-          "getting-started/setup"
+          {
+            "group": "Onboarding",
+            "pages": [
+              "onboarding",
+              "onboarding/download-app",
+              "onboarding/accept-invite",
+              "onboarding/set-up-identity",
+              "onboarding/enroll-iphone",
+              "onboarding/log-in",
+              "onboarding/invite-users",
+              "onboarding/create-account"
+            ]
+          }
         ]
       },
       {

@@ -1,0 +1,65 @@
+---
+title: "Create an account"
+description: "Add a custody account in Portfolio, set manage and send approval rules, then add wallets as you need them."
+---
+
+After you can log in, you create custody **accounts** in Portfolio. An account holds the assets and approval rules you configure. Wallets sit under an account. Strongpoint does not use vaults for this model.
+
+This page covers creating an account and points to wallets. It does not document sending or receiving funds yet. [TK: add send and receive steps when those docs and product copy are verified.]
+
+## Before you start
+
+- You can [log in to the console](/onboarding/log-in) with an enrolled iPhone.
+- You have a role that can add accounts (typically Owner or Admin; confirm against your organisation's permissions). See [Roles and permissions](/organisation/roles-and-permissions).
+- You know which assets the account should manage and who should approve **Manage** and **Send** actions.
+
+## How to create a custody account
+
+1. Sign in and open **Portfolio**.
+2. Tap **Add account**.
+3. On **Add account**, enter an **Account name** (for example a treasury or ops label).
+4. Under **Select assets to manage**, choose the network or assets the account should support. You can add more later when the product allows it.
+5. Tap **Continue**.
+6. On **Set approval rules**, choose approvers and how many approvals each action needs:
+   - **Manage.** Changing this account's approvers or how many approvals it needs.
+   - **Send.** Moving funds out of this account.
+7. Tap **Continue**.
+8. On **Review**, check the name, assets, and approval summaries.
+9. Tap **Create account**. When creation succeeds, the console opens the new account (URL under `/portfolio/accounts/…`).
+
+Closing a wizard you have edited may ask **Leave editing?** Confirm only if you intend to discard the draft.
+
+## Add wallets
+
+After the account exists, open the account detail in Portfolio and add wallets for that account as your organisation needs them. See [Wallets](/portfolio/wallets) when that guide is published.
+
+Do not confuse wallets with Anchorage-style vaults. In Strongpoint the hierarchy is **account → wallet → address**.
+
+## What this page does not cover
+
+- Sending or receiving crypto from an account or wallet. [TK]
+- Address management details beyond the Portfolio navigation. See [Addresses](/portfolio/addresses) when published.
+- Claiming that create account is available in every environment. If the console shows that create is unavailable, contact Strongpoint.
+
+## Limits and common mistakes
+
+- **Manage** and **Send** use separate approver sets. Approvers you pick for Manage are not automatically the Send approvers.
+- Creating an account is different from inviting users or enrolling devices. Those flows stay under Team and onboarding.
+- If networks fail to load, wait and try again rather than inventing asset tickers the catalog does not list.
+
+## If something goes wrong
+
+- **Could not create the account.** Stay on Review, check your connection and permissions, then try **Create account** again or contact your Owner.
+- **Create account is not available yet.** The environment may not expose creation. Contact Strongpoint rather than forcing a workaround.
+- **Networks are not available right now.** Retry shortly; if it persists, contact Support.
+- **You need to move funds.** Wait for the sending and receiving guide. [TK] Until then, follow your organisation's operating procedure and Approvals policies.
+
+## Related
+
+- [Accounts](/portfolio/accounts)
+- [Wallets](/portfolio/wallets)
+- [Approvals](/policies-and-approvals/approvals)
+- [Invite your team](/onboarding/invite-users)
+- [Onboarding](/onboarding)
+
+Last reviewed 23 October 2026.

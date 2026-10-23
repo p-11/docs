@@ -1,0 +1,49 @@
+---
+title: "Set up your identity"
+description: "Create a passkey or link Google so you can sign in to Strongpoint after you accept your invitation."
+---
+
+Setting up your identity binds your invitation to a sign-in method. Depending on your organisation, you create a passkey or link a Google account. That method is how you identify yourself on later visits before your iPhone approves each console session.
+
+## Before you start
+
+- You have accepted your invitation and entered your full name. See [Accept your invitation](/onboarding/accept-invite).
+- Use a browser that supports passkeys if your organisation uses passkeys.
+- If your organisation uses Google, allow the browser to complete a Google sign-in redirect in this tab.
+
+## How to set up your identity
+
+1. On **Set up your identity**, read **Choose how you want to sign in to Strongpoint.**
+2. Choose the method your invitation supports:
+   - **Continue with passkey** when your organisation uses passkeys.
+   - **Continue with Google** when your organisation uses Google (OIDC). The console labels this as linking your Google account.
+3. Follow the prompts:
+   - **Passkey.** Complete the browser passkey ceremony for the name you entered. If you are creating a new passkey, save it to a password manager your iPhone can access. The console may show **Continue with passkey** while it works.
+   - **Google.** Continue to Google, sign in with the account your organisation expects, then return to the console to finish linking.
+4. When identity setup succeeds, continue to [Download the Strongpoint Authenticator](/onboarding/download-app) if you have not already installed it, then to [Enroll your iPhone](/onboarding/enroll-iphone).
+
+Your organisation's invitation decides whether you see passkey, Google, or the method required for that org. Do not expect every provider your company uses elsewhere (for example other SSO products) to appear here unless Strongpoint has configured it for your organisation. Today the OIDC path in the console is Google.
+
+## Limits and common mistakes
+
+- Passkeys must work in the browser you use for onboarding. If the browser does not support passkeys, try a different browser.
+- Cancelling the passkey prompt does not consume your invitation permanently; you can try again when you are ready.
+- Google setup needs storage the browser allows for the redirect return. If Google is unavailable on this browser, the console explains that; try another browser or contact your admin.
+- Returning users who already have a Strongpoint identity may verify an existing passkey instead of creating a new one, then continue to device enrollment for this organisation.
+
+## If something goes wrong
+
+- **Passkey setup was cancelled or timed out.** Tap **Try again** and complete the device prompt.
+- **No passkey is available on this device** or **This browser does not support passkeys.** Use a supported browser or a device that can create or present a passkey.
+- **We could not prepare Google sign-in.** Return to the invitation and try again, or use a browser that allows the Google redirect to finish.
+- **Your passkey was verified, but we could not confirm that the invitation was accepted.** Try again. If it keeps failing, contact your administrator with the invitation email time.
+
+## Related
+
+- [Accept your invitation](/onboarding/accept-invite)
+- [Download the Strongpoint Authenticator](/onboarding/download-app)
+- [Enroll your iPhone](/onboarding/enroll-iphone)
+- [Log in to the console](/onboarding/log-in)
+- [Onboarding](/onboarding)
+
+Last reviewed 23 October 2026.
