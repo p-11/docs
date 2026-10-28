@@ -1,0 +1,55 @@
+---
+title: "Enroll your iPhone"
+description: "Install the Strongpoint Authenticator and link it to your Strongpoint login."
+---
+
+<Note>The Strongpoint Authenticator runs only on iPhone, and there is no Android version. In the console and the App Store, it is called **Strongpoint**.</Note>
+
+{/* TK: add the supported iPhone models and minimum iOS version. */}
+
+<Warning>You get one try at the six-digit code. A wrong code cancels the enrollment, and you start again with a new QR code.</Warning>
+
+<Steps>
+  <Step title="Install the app">
+    On **Download the Strongpoint app**, scan the QR code with your iPhone camera and install the app. Then click **I have the app**.
+  </Step>
+  <Step title="Scan the enrollment QR code">
+    On your iPhone, unlock the Strongpoint Authenticator, tap **Open Camera**, and scan the QR code on **Enroll your iPhone**.
+
+    <Frame caption="Figure 1: Scan this code with Open Camera inside the Strongpoint Authenticator.">
+      <img src="/images/onboarding/enroll-qr.png" alt="Enroll your iPhone screen with two numbered steps and an enrollment QR code." />
+    </Frame>
+  </Step>
+  <Step title="Confirm on your iPhone">
+    In the app, check the enrollment details and confirm with Face ID or Touch ID. The app then shows a six-digit code.
+
+    <Frame caption="Figure 2: The app shows the code to type into the console.">
+      <img src="/images/onboarding/app-enroll-code.png" alt="The Strongpoint Authenticator showing Enter this code with a six-digit code." style={{ maxWidth: "300px" }} />
+    </Frame>
+  </Step>
+  <Step title="Enter the code in the console">
+    On **Confirm your iPhone**, type the code and click **Confirm**. Then tap **I have entered the code** in the app.
+  </Step>
+  <Step title="Wait for approval">
+    On **Awaiting Device Enrollment Approval**, wait while an approver in your organization approves your iPhone. The page updates when they do.
+
+    {/* TK: confirm who approves the first Owner's iPhone. The Auth ADR says Strongpoint (P11) approves a new organization's first user. If so, add: "If you are the first person in your organization, Strongpoint approves it." and a matching row below. */}
+  </Step>
+  <Step title="Log in">
+    On **You're all set**, click **Log in to Strongpoint**.
+  </Step>
+</Steps>
+
+## If it does not work
+
+| What you see | What to do |
+|---|---|
+| **Pairing failed - incorrect 6-digit code** | Click **Get a new QR code** and start again from step 2. |
+| The app does not accept the QR code | Each QR code works once. Click **Get a new QR code**. |
+| **We could not start pairing**, with "You already have a paired device for this organization" | This iPhone is already enrolled. Click **Log in**. |
+| **We could not start pairing**, with "Request your team to issue you an enrollment" | Ask an Owner or Admin to [send you a device enrollment](/organisation/send-device-enrollment). |
+| **Awaiting Device Enrollment Approval** does not change | Ask an approver to open the Strongpoint Authenticator and approve your iPhone. |
+| **Your session expired. Please log in again.** | You left **Enroll your iPhone** open for more than 30 minutes. [Log in](/onboarding/log-in), then click **Enroll Device**. |
+| You cannot find the app in the App Store | Contact [Strongpoint support](mailto:support@strongpoint.projecteleven.com). |
+
+{/* TK: link the App Store listing once the URL is public. */}
