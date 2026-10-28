@@ -1,62 +1,56 @@
 ---
 title: "Invite your team"
-description: "Owners and Admins request Strongpoint invitations from Team. Emails send only after approval."
+description: "Invite people to your organization from Team, and track each invitation until they join."
 ---
 
-Inviting a teammate is an approval-gated operation. You request the invitation in the console; Strongpoint emails it only after enough approvers sign off in the Strongpoint Authenticator.
+<Info>Requires the Owner or Admin role, and an invitation policy with enough active approvers. See [Approvals](/policies-and-approvals/approvals).</Info>
 
-## Before you start
+Each invitation is an approval request. Strongpoint emails your teammate only after enough approvers approve it in the Strongpoint Authenticator.
 
-- You have the **Owner** or **Admin** role. See [Roles and permissions](/organisation/roles-and-permissions).
-- You can log in to the console with an enrolled iPhone. See [Log in to the console](/onboarding/log-in).
-- Your organisation has an approval policy for invitations with enough active approvers to meet quorum. See [Approvals](/policies-and-approvals/approvals) and [Policies](/policies-and-approvals/policies).
+<Steps>
+  <Step title="Open the invite form">
+    Go to **Team** and click **Invite User**.
+  </Step>
+  <Step title="Fill in the details">
+    Enter your teammate's **Organization email** and choose a **Role**. You can add a **Message**, which appears in their invitation email.
 
-## How to invite a user
+    <Frame caption="Figure 1: The note above the buttons shows how many approvals the invitation needs.">
+      <img src="/images/onboarding/invite-form.png" alt="Invite User dialog with an email, the Signer role, a message, and a note that the request needs approval, 2 of 3." />
+    </Frame>
+  </Step>
+  <Step title="Request approval">
+    Check how many approvals the request needs, then click **Request approval to invite**.
+  </Step>
+  <Step title="Get it approved">
+    Ask your approvers to approve the request. They have 24 hours unless your policy sets a different window. If the request shows **Expired**, start it again.
 
-1. In the console, open **Team**.
-2. Tap **Invite User**.
-3. Enter the invitee's **Organization email** and choose a **Role** (**Owner**, **Admin**, **Signer**, or **Auditor**).
-4. Optionally add a **Message**. The invitee sees it on the welcome screen and in the invitation email.
-5. Read the guidance that this request needs approval before the invitation is sent.
-6. Tap **Request approval to invite**.
-7. Ask the named approvers to open the Strongpoint Authenticator and approve the request. You can follow progress under Approvals (**View request** / **Open Approvals**).
-8. When the request is **Completed**, Strongpoint emails the invitation. Tell the invitee to follow [Accept your invitation](/onboarding/accept-invite).
+    {/* TK: state how long an invitation link stays valid once sent ("Invitation expired" is a failure on Accept your invitation). */}
+  </Step>
+</Steps>
 
-### Roles at a glance
+## After you invite
 
-| Role | What the invite copy says |
+Track each invitation under **Team > Invitations**. Its status moves through **Invitation approval**, **Invite sent**, **Awaiting enrollment**, and **Enrollment approval**.
+
+Your teammate follows [Accept your invitation](/onboarding/accept-invite) and [Enroll your iPhone](/onboarding/enroll-iphone). Approvers then approve their iPhone, which is the **Enrollment approval** status.
+
+## Roles
+
+| Role | Can do |
 |---|---|
-| Auditor | Read-only access to keys, approvals, and audit history. |
-| Signer | Can read keys and sign. Cannot manage users, policies, or org settings. |
-| Admin | Can manage users, keys, policies, and operational setup, but may not have full ownership-level control. |
 | Owner | Full organization control, including inviting and assigning other Owners. |
+| Admin | Manage users, keys, policies, and operational setup. |
+| Signer | Read keys and sign. Cannot manage users, policies, or organization settings. |
+| Auditor | Read keys, approvals, and audit history. Cannot change anything. |
 
-*Table 1: Role summaries shown when inviting*
+{/* TK: the console says Admins "may not have full ownership-level control". State exactly what Admins cannot do. */}
 
-### Send device enrollment (existing members)
+## If it does not work
 
-If a member still needs a first device, or needs another device, use **Send device enrollment** from Team. That request is also approval-gated. Approval authorises Strongpoint to attempt issuing and emailing a one-time enrollment link. It does not by itself activate the member or prove the email arrived. The member must finish enrollment, and an approver must approve the device before that device can be used.
-
-## Limits and common mistakes
-
-- Submitting **Invite User** does not email anyone until quorum is met. Do not tell the invitee to check their inbox before Approvals shows **Completed**.
-- If not enough active approvers remain for the invitation policy, the console blocks the request (for example **Invitation approval is unavailable**). Fix the policy or membership first.
-- Do not resubmit the same details when the status is ambiguous or a duplicate may already exist. Check Approvals and Team before starting a new invite.
-- Inviting users is not the same as creating an organisation. Organisation bootstrap is handled outside the customer console.
-
-## If something goes wrong
-
-- **Invitation approval is unavailable.** Ask an Owner to restore eligible approvers or the invitation policy, then try again.
-- **Invitation already requested** or status unknown. Open Approvals or Team; do not submit the same email and role again until you know the outcome.
-- **The invitee never got email.** Confirm the approval completed, check spam, and confirm the email address. Resend only through the product flow after checking existing requests.
-- **The invitee is stuck without a device.** Use **Send device enrollment**, complete that approval, and have them open the new link on an iPhone.
-
-## Related
-
-- [Users](/organisation/users)
-- [Roles and permissions](/organisation/roles-and-permissions)
-- [Approvals](/policies-and-approvals/approvals)
-- [Accept your invitation](/onboarding/accept-invite)
-- [Onboarding](/onboarding)
-
-Last reviewed 23 October 2026.
+| What you see | What to do |
+|---|---|
+| **Invitation approval is unavailable** | Your organization has no invitation policy, or not enough active approvers for it. An Owner or Admin must fix the policy first. |
+| **Invitation status is unknown** | The request may already exist. Check **Approvals** and **Team** before you try again. |
+| **Too many invitation attempts** | Wait a moment, then try again. |
+| Your teammate got no email | Check that the status shows **Invite sent** and the address is right. Ask them to check spam. |
+| Your teammate joined but has no enrolled iPhone | [Send them a device enrollment](/organisation/send-device-enrollment). |

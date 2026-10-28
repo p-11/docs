@@ -1,48 +1,43 @@
 ---
 title: "Log in to the console"
-description: "Sign in to the Strongpoint console and approve the session on your enrolled iPhone."
+description: "Log in with your passkey or Google account, then confirm on your iPhone."
 ---
 
-Every console sign-in is approved on your enrolled iPhone. You identify yourself with the passkey or Google account you set up during onboarding, then confirm the sign-in in the Strongpoint Authenticator.
+<Steps>
+  <Step title="Enter your email">
+    Go to [strongpoint.projecteleven.com](https://strongpoint.projecteleven.com), enter your work email, and click **Continue with Passkey** or **Continue with Google**.
+  </Step>
+  <Step title="Choose your organization">
+    If you belong to more than one organization, choose the one to open.
+  </Step>
+  <Step title="Note the number">
+    The console shows a two-digit number. You have 5 minutes to confirm it on your iPhone.
 
-## Before you start
+    <Frame caption="Figure 1: The console shows the number to look for on your iPhone.">
+      <img src="/images/onboarding/login-number.png" alt="Approve log in on your Strongpoint app screen showing the number 71 and a countdown." />
+    </Frame>
+  </Step>
+  <Step title="Confirm on your iPhone">
+    Unlock the Strongpoint Authenticator with Face ID or Touch ID and open the **New Log In** request. Tap the number that matches the console, then tap **Confirm**.
 
-- Your iPhone is enrolled and active for your organisation. See [Enroll your iPhone](/onboarding/enroll-iphone).
-- You have the Strongpoint Authenticator on that iPhone, with Face ID or Touch ID available.
-- Open the console at the [Dashboard](https://strongpoint.projecteleven.com) (or **Log in to Strongpoint** from the end of onboarding).
+    <Frame caption="Figure 2: Tap the same number as the console. A wrong number fails the login.">
+      <img src="/images/onboarding/app-login-match.png" alt="The Strongpoint Authenticator showing Match the number with three options, 42, 71, and 19, and a Confirm button." style={{ maxWidth: "300px" }} />
+    </Frame>
+  </Step>
+</Steps>
 
-## How to log in
+The console opens.
 
-1. Open the Strongpoint log-in page in your browser.
-2. Enter the email your organisation invited, then continue with the identity method you enrolled (**Continue with passkey** or **Continue with Google**), matching how your organisation signs in.
-3. If you belong to more than one organisation, pick the organisation you want to enter when the console asks.
-4. When the console opens a sign-in approval, unlock the Strongpoint Authenticator on your iPhone.
-5. Match the number. The console shows a number and the app shows three options. Tap the number that matches. A wrong tap makes the sign-in **Failed**.
-6. Confirm with Face ID or Touch ID when the app asks.
-7. Return to the browser. When the approval completes, Strongpoint opens your console session.
+## If it does not work
 
-Sign-in approvals stay open for **5 minutes** unless a policy sets a different window. Most other operation approvals stay open longer. See [Approvals](/policies-and-approvals/approvals).
+| What you see | What to do |
+|---|---|
+| **Failed** | You tapped the wrong number. Log in again. |
+| **Request time out** | You did not confirm within 5 minutes. Log in again. |
+| **Log in rejected**, with "does not have an active enrolled device" | Click **Enroll Device** and follow [Enroll your iPhone](/onboarding/enroll-iphone). |
+| **No active organization** | Your membership is not active yet. Ask an Owner or Admin to check it. |
+| The app does not accept your answer | Your iPhone clock is more than two minutes out. Turn on **Set Automatically** in **Settings > General > Date & Time**. |
+| No notification on your iPhone | Open the Strongpoint Authenticator anyway. The request is there. |
+| You no longer have your enrolled iPhone | Ask an Owner or Admin to [send you a device enrollment](/organisation/send-device-enrollment) for your new iPhone. |
 
-## Limits and common mistakes
-
-- You cannot skip iPhone approval for a normal console session. An enrolled Authenticator is required.
-- Matching the wrong number fails that attempt. Start log-in again to open a new request.
-- Rejecting the request in the app creates no session. Contact your administrator if you did not mean to reject it.
-- Push notifications may be delayed. Open the Authenticator and the console approvals list rather than waiting only on a banner.
-
-## If something goes wrong
-
-- **A sign-in shows Failed.** The wrong number was tapped, or the attempt could not complete. Sign in again.
-- **Request time out.** The five-minute window closed. Start a new log-in.
-- **Log in rejected** and you have no active enrolled device. Complete device enrollment, or ask an Owner or Admin to send device enrollment from Team.
-- **No active organization.** Your membership is not active yet. Contact your administrator.
-- **The app refuses your decision.** Check that automatic date and time is on in iOS settings (clock skew can block signatures), then try again.
-
-## Related
-
-- [Enroll your iPhone](/onboarding/enroll-iphone)
-- [Approvals](/policies-and-approvals/approvals)
-- [iOS Authenticator](/policies-and-approvals/ios-authenticator)
-- [Onboarding](/onboarding)
-
-Last reviewed 23 October 2026.
+{/* TK: say what the "Can't access your Strongpoint app?" link on the login page leads to, and whether it replaces asking an Owner or Admin. */}

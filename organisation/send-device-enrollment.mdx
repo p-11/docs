@@ -1,0 +1,36 @@
+---
+title: "Send a device enrollment"
+description: "Email a member a link to enroll an iPhone, for their first device or a new one."
+---
+
+<Info>Requires the Owner or Admin role.</Info>
+
+Like an invitation, each device enrollment needs approval before Strongpoint sends the email.
+
+<Steps>
+  <Step title="Find the member">
+    Go to **Team** and find the member in the list.
+  </Step>
+  <Step title="Send the enrollment">
+    At the end of the member's row, click **⋮** and choose **Send device enrollment**.
+
+    <Frame caption="Figure 1: Click ⋮ at the end of a member's row to find Send device enrollment. A member with no enrolled iPhone shows None.">
+      <img src="/images/onboarding/team-send-enrollment.png" alt="Team members list with the More actions menu open, showing Change role, Send device enrollment, and Remove member." />
+    </Frame>
+  </Step>
+  <Step title="Get it approved">
+    Ask your approvers to approve the request. If it shows **Expired**, send the enrollment again.
+  </Step>
+</Steps>
+
+When the request is approved, Strongpoint emails the member a link that works once. The member opens it on their iPhone, and an approver then approves the device.
+
+## If it does not work
+
+| What you see | What to do |
+|---|---|
+| The member got no email | Check that the request was approved in **Approvals**. Ask them to check spam. |
+| The link no longer works | Each link works once. Send a new device enrollment. |
+| The link opens on a computer | The page says **Open this enrollment link on your iPhone**. The member opens the email on their iPhone instead. |
+
+{/* TK: confirm how the six-digit code is confirmed in this flow. Team's "Confirm device" action is marked coming soon in production. */}

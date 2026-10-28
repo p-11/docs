@@ -24,9 +24,7 @@
             "group": "Onboarding",
             "pages": [
               "onboarding",
-              "onboarding/download-app",
               "onboarding/accept-invite",
-              "onboarding/set-up-identity",
               "onboarding/enroll-iphone",
               "onboarding/log-in",
               "onboarding/invite-users",
@@ -48,6 +46,7 @@
         "group": "Organisation",
         "pages": [
           "organisation/users",
+          "organisation/send-device-enrollment",
           "organisation/roles-and-permissions"
         ]
       },
