@@ -1,16 +1,11 @@
 ---
 title: "Create an account"
-description: "Create an account to hold your assets, and choose who approves changes and payments."
+description: "Create an account to hold your assets, and choose who approves sending funds."
 ---
 
 <Info>Requires the Owner or Admin role.</Info>
 
-{/* TK: confirm which roles can create accounts, and whether account creation is available in every customer environment. If it is not, add the gate to the Info box above. */}
-
-An account holds your assets. Each account has its own approvers for two actions:
-
-- **Manage** changes the account's approvers or how many approvals it needs.
-- **Send** moves funds out of the account.
+An account holds your assets. When you create it, you choose who approves sending funds out of it. Its other actions, such as adding a wallet, follow your organization's [approval rules](/policies-and-approvals/policies).
 
 ## Creating an account
 
@@ -21,15 +16,15 @@ An account holds your assets. Each account has its own approvers for two actions
   <Step title="Name it and choose assets">
     Enter an **Account name**, for example "Treasury". Under **Select assets to manage**, choose the assets it will hold, then click **Continue**. You can add more later.
   </Step>
-  <Step title="Set approval rules">
-    On **Set approval rules**, choose who can approve **Manage** and **Send**, and how many approvals each needs. Approvers need an enrolled iPhone. For how the number of approvals works, see [Quorum](/policies-and-approvals/approvals#quorum). Click **Continue**.
+  <Step title="Choose who approves sends">
+    **Who can approve sends** starts with your organization default. To keep it, click **Continue**. To change it, click the pencil, choose approvers and **Approvals needed**, then click **Override and Continue**.
 
-    <Frame caption="Figure 1: Manage and Send each have their own approvers and number of approvals.">
-      <img src="/images/onboarding/account-rules.png" alt="Set approval rules dialog with approvers and approvals needed set for Manage and for Send." style={{ maxWidth: "360px" }} />
+    <Frame caption="Figure 1: Sends start with your organization default rule.">
+      <img src="/images/onboarding/account-sends.png" alt="Who can approve sends step showing 1 approval needed from 1 person, with Back, Cancel and Continue buttons." style={{ maxWidth: "340px" }} />
     </Frame>
   </Step>
   <Step title="Create the account">
-    Check the summary and click **Create account**. The console opens your new account.
+    On **Review account**, check the name, assets, and approvers, then click **Create account**. The console opens your new account. If the account needs a wallet for a network, the console shows "Approval requested" instead: each wallet waits for a **Create Wallet** approval.
   </Step>
 </Steps>
 
