@@ -1,0 +1,38 @@
+---
+title: "Request statuses"
+description: "What each request status means, and how long requests stay open."
+---
+
+## Statuses
+
+| Status | Meaning |
+|---|---|
+| **Needs review** | The request is open and waiting for your decision. |
+| **Awaiting** | The request is open and waiting on other approvers. |
+| **Completed** | Enough approvers approved, and the action ran. |
+| **Rejected** | Enough approvers rejected that the request can no longer reach its approvals. |
+| **Expired** | The approval window closed before enough approvers approved. |
+| **Cancelled** | The person who started the request withdrew it. |
+| **Failed** | An approval could not be completed, so the request can no longer reach its approvals. For a login, it means the wrong number was tapped. |
+
+## What a closed request shows
+
+Open a closed request in the console to see its outcome at the top of **Details**.
+
+| Status | Message |
+|---|---|
+| **Completed** | "Quorum met · M of N", for example "Quorum met · 2 of 3", followed by what the action did |
+| **Rejected** | "This request has been rejected." with "The approval quorum could no longer be met." Each approver's reason appears with their decision. |
+| **Expired** | "This request expired before the quorum was met." with how many approvals arrived |
+| **Cancelled** | "This request has been cancelled." with who cancelled it and when |
+| **Failed** | "This approval couldn't be completed." |
+
+## Time windows
+
+| Request | Stays open for |
+|---|---|
+| An action using the **Standard** window | 24 hours |
+| A login | 5 minutes |
+| An action whose rule sets its own window | 1 hour, 8 hours, 24 hours, 48 hours or 7 days |
+
+The console shows the time left during a request's last 24 hours. Its clock icon turns amber in the last hour and red in the last 30 minutes.

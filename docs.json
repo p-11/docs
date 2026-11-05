@@ -33,19 +33,28 @@
         ]
       },
       {
-        "group": "Organisation",
+        "group": "Organization",
         "pages": [
           "organisation/users",
           "organisation/roles-and-permissions"
         ]
       },
       {
-        "group": "Policies & Approvals",
+        "group": "Policies and approvals",
         "pages": [
           "policies-and-approvals/approvals",
-          "policies-and-approvals/ios-authenticator",
-          "policies-and-approvals/quorums",
-          "policies-and-approvals/policies"
+          "policies-and-approvals/approve-request",
+          "policies-and-approvals/track-requests",
+          "policies-and-approvals/cancel-request",
+          "policies-and-approvals/change-policy",
+          {
+            "group": "Reference",
+            "pages": [
+              "policies-and-approvals/request-statuses",
+              "policies-and-approvals/policies",
+              "policies-and-approvals/quorums"
+            ]
+          }
         ]
       },
       {
@@ -110,5 +119,11 @@
   },
   "fonts": {
     "family": "Geist"
-  }
+  },
+  "redirects": [
+    {
+      "source": "/policies-and-approvals/ios-authenticator",
+      "destination": "/policies-and-approvals/approve-request"
+    }
+  ]
 }
