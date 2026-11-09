@@ -40,21 +40,26 @@
         ]
       },
       {
-        "group": "Policies and approvals",
+        "group": "Approvals",
         "pages": [
           "policies-and-approvals/approvals",
           "policies-and-approvals/approve-request",
           "policies-and-approvals/track-requests",
           "policies-and-approvals/cancel-request",
-          "policies-and-approvals/change-policy",
           {
             "group": "Reference",
             "pages": [
               "policies-and-approvals/request-statuses",
-              "policies-and-approvals/policies",
               "policies-and-approvals/quorums"
             ]
           }
+        ]
+      },
+      {
+        "group": "Policies",
+        "pages": [
+          "policies-and-approvals/policies",
+          "policies-and-approvals/change-policy"
         ]
       },
       {

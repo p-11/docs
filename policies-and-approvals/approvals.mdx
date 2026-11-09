@@ -1,50 +1,35 @@
 ---
 title: "Approvals"
 sidebarTitle: "Overview"
-description: "How Strongpoint holds a sensitive action until enough approvers agree to it."
+description: "What approvals are, and how a request gets approved."
 ---
 
-You approve sensitive actions on your iPhone before Strongpoint runs them. Inviting a user, changing a role, adding a key and changing an approval rule each start an approval request.
+Approvals are how Strongpoint authorizes actions. Before Strongpoint moves funds, invites a user, or changes a key or a policy, the right people in your organization approve it on their iPhones.
+
+Your [policies](/policies-and-approvals/policies) decide who those people are and how many of them must approve each action. Together, policies and approvals control how funds leave your custody accounts.
 
 ## How a request moves
 
-1. **Someone starts an action.** Strongpoint finds the [approval rule](/policies-and-approvals/policies) for that action and records who can approve it and how many approvals it needs.
-2. **Approvers get a notification.** It reads "Approval required" and shows no details. It goes to each approver's most recently enrolled iPhone, and the request also appears on the **Approvals** page in the console.
-3. **Approvers decide on their iPhone.** Each approver reviews the request in the Strongpoint Authenticator, then approves or rejects it with Face ID or Touch ID.
-4. **Strongpoint runs the action.** When enough approvals arrive, the request shows **Completed** and the action runs.
-
-For how long a request stays open, see [Request statuses](/policies-and-approvals/request-statuses#time-windows).
+1. **Someone starts a request.** For example, to send funds, invite a user or change a policy. Strongpoint uses the policy for that action to set who can approve and how many approvals it needs.
+2. **Approvers get a notification on their iPhone.** The request also appears on the **Approvals** page in the console.
+3. **Approvers decide in the Strongpoint Authenticator.** Approvals are made only on an enrolled iPhone.
+4. **Strongpoint runs or stops the action.** It runs once enough approvers approve. It stops if too many reject, or if the request expires first.
 
 ## Tasks
 
-<CardGroup cols={2}>
+<CardGroup cols={3}>
   <Card title="Approve or reject a request" icon="circle-check" href="/policies-and-approvals/approve-request">
-    Review a request on your iPhone and decide with Face ID or Touch ID.
+    Review a request on your iPhone and decide.
   </Card>
   <Card title="Track requests in the console" icon="list-check" href="/policies-and-approvals/track-requests">
     Find a request and follow it to its outcome.
   </Card>
   <Card title="Cancel a request" icon="ban" href="/policies-and-approvals/cancel-request">
-    Withdraw a request you started before it resolves.
-  </Card>
-  <Card title="Change an approval rule" icon="shield-halved" href="/policies-and-approvals/change-policy">
-    Choose who approves an action and how many approvals it needs.
+    Withdraw a request you started.
   </Card>
 </CardGroup>
 
 ## Reference
 
 - [Request statuses](/policies-and-approvals/request-statuses): what each status means, and how long requests stay open.
-- [Approval policies](/policies-and-approvals/policies): which rule applies to an action, and the limits on rules.
 - [Quorums](/policies-and-approvals/quorums): how approvals and rejections are counted.
-
-## What an approver signs
-
-Your iPhone signs a summary of what you reviewed: the action and its details, the request, its expiry time, your decision, and the time you made it. A signature made for one request cannot be reused for another. A rejection reason is shown to other approvers but is not part of the signature.
-
-Each decision carries two signatures over that summary:
-
-- **ECDSA (P-256).** A classical signature scheme.
-- **ML-DSA-87.** A post-quantum signature scheme that NIST standardized as FIPS 204.
-
-Both signing keys are created in your iPhone's Secure Enclave and need Face ID or Touch ID to use. Strongpoint accepts a decision only when both signatures verify.
