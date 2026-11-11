@@ -1,42 +1,31 @@
 ---
 title: "Policies"
 sidebarTitle: "Overview"
-description: "What policies are, and how Strongpoint decides who approves each action."
 ---
 
-Policies set the rules for [approvals](/policies-and-approvals/approvals). Your organization's policy has one rule per action, such as adding a user or sending funds. Each rule sets who can approve the action, how many approvals it needs, and how long approvers have.
+Policies set the rules for [approvals](/policies-and-approvals/approvals). For example, a policy for adding users might require 2 of 3 named approvers to approve each invitation. Each policy sets who can approve an action, how many approvals it needs, and how long approvers have.
 
-When someone starts an action, Strongpoint uses its rule to create the approval request.
-
-<CardGroup cols={2}>
-  <Card title="Change an approval rule" icon="shield-halved" href="/policies-and-approvals/change-policy">
-    Choose who approves an action and how many approvals it needs.
-  </Card>
-</CardGroup>
-
-## Which rule applies
-
-When someone starts an action, Strongpoint uses the first rule it finds, in this order:
-
-1. A rule set for the specific account or key ring.
-2. A rule set for the action in **Policies**.
-3. **Organization default**.
-
-Rules never combine. A new organization starts with an **Organization default** of 1 approval, from its first enrolled member.
+When someone starts an action, Strongpoint uses that action's policy to create the approval request.
 
 ## Who can approve
 
-- **Roles.** Choose Owners, Admins, Signers, or a mix. Everyone holding the role when a request starts can approve it.
-- **People.** Name any member. They stay on the rule until someone removes them.
+- **Roles.** Choose Owners, Admins, Signers, or a mix. Everyone with the role when a request starts can approve it.
+- **People.** Name any member. They stay on the policy until someone removes them.
 
-An approver counts only with an enrolled iPhone. The person who starts a request can also approve it if they are an approver, so to require a second person, set **Approvals needed** to at least 2. A member never approves their own new device.
+Approvers need an enrolled iPhone. The person who starts a request can also approve it if they are an approver, so to require a second person, set **Approvals needed** to at least 2. Members never approve their own new device.
 
-## Actions with rules
+## Which policy applies
+
+Each action uses its own policy. An action without one follows your default policy, shown as **Organization default** in the console. A new organization's default policy needs 1 approval, from its first enrolled member.
+
+Accounts can also have their own **Send** and **Manage** policies. You set them when you [create the account](/onboarding/create-account), or later from the account's **Policies** tab: click the policy, then **Override rule** and **Request change**.
+
+## Actions with policies
 
 | Action | Covers |
 |---|---|
-| **Organization default** | Every action without its own rule |
-| **Update approval policy** | Changes to any rule |
+| **Organization default** | Every action without its own policy |
+| **Update approval policy** | Changes to any policy |
 | **Add user** | Inviting someone to the organization |
 | **Change role** | Giving a member a different role |
 | **Enroll device** | Sending a member a link to set up a new iPhone |
@@ -47,15 +36,22 @@ An approver counts only with an enrolled iPhone. The person who starts a request
 | **New log in** (fixed) | 1 approval, from your own enrolled iPhone |
 | Signing with a key (fixed) | Every enrolled member approves |
 
-To change an account's **Send** or **Manage** rule, open the account's **Policies** tab, click the rule, then **Override rule**. Your change is sent for approval with **Request change**.
-
 {/* TK: the console's Policies page lists "Sign payload: No approval needed", but the backend requires unanimous approval from every enrolled member for key signing (rs/kms/src/domain/sign/raise.rs). Ask product to fix the console copy. */}
+{/* TK: the backend also supports policies for a single key ring, but the console marks them "Coming soon". Document them once they can be set. */}
 
 ## Limits
 
-- A rule needs at least 1 approver and at least 1 approval, and no more approvals than it has approvers.
-- The Auditor role cannot be chosen as an approver role.
-- If fewer approvers qualify than a rule needs, Strongpoint refuses the action before it starts, for example "Not enough active approvers remain to meet the invitation approval policy." It never lowers the number of approvals. An Owner or Admin fixes the rule. If the **Update approval policy** rule itself can't reach its approvals, contact [Strongpoint support](mailto:support@strongpoint.projecteleven.com).
-- **Organization default** always exists and uses the standard approval window.
-- Changing a rule is itself an approval request, decided by the **Update approval policy** rule in force at the time. Open requests keep the rule they started with.
-- A person named on a rule cannot be removed from the organization until you take them off the rule. **Team** shows "Cannot remove this member yet".
+- A policy needs at least 1 approver and 1 approval, and no more approvals than it has approvers.
+- The Auditor role can't be chosen as an approver role.
+- If fewer approvers qualify than a policy needs, Strongpoint refuses the action before it starts, for example "Not enough active approvers remain to meet the invitation approval policy." It never lowers the number of approvals. An Owner or Admin fixes the policy. If the policy for **Update approval policy** itself can't reach its approvals, contact [Strongpoint support](mailto:support@strongpoint.projecteleven.com).
+- The default policy always exists and uses the standard approval window.
+- Changing a policy is itself an approval request, decided by the policy for **Update approval policy**. Open requests keep the policy they started with.
+- A person named on a policy can't be removed from the organization until you take them off it. **Team** shows "Cannot remove this member yet".
+
+## Tasks
+
+<CardGroup cols={2}>
+  <Card title="Change a policy" icon="shield-halved" href="/policies-and-approvals/change-policy">
+    Choose who approves an action and how many approvals it needs.
+  </Card>
+</CardGroup>

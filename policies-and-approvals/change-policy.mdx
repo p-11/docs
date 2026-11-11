@@ -1,25 +1,25 @@
 ---
-title: "Change an approval rule"
+title: "Change a policy"
 description: "Choose who approves an action, how many approvals it needs, and how long approvers have."
 ---
 
-<Info>Requires the Owner or Admin role. Each change is itself an approval request, decided by the **Update approval policy** rule.</Info>
+<Info>Requires the Owner or Admin role. Each change is itself an approval request, decided by the policy for **Update approval policy**.</Info>
 
-## Changing an approval rule
+## Changing a policy
 
 <Steps>
-  <Step title="Open the rule">
-    Go to **Policies**, stay on **Approval requirements**, and click the action you want to change, for example **Add user**. An action without its own rule follows **Organization default**.
+  <Step title="Open the policy">
+    Go to **Policies**, stay on **Approval requirements**, and click the action you want to change, for example **Add user**. An action without its own policy follows the default policy, **Organization default**.
 
-    <Frame caption="Figure 1: Each action shows how many approvals it needs.">
+    <Frame caption="Figure 1: Each action shows how many approvals its policy needs.">
       <img src="/images/approvals/console-policies.png" alt="People section of the Policies page listing Add user, Change role, Enroll device and Approve device with their approval counts." style={{ maxWidth: "620px" }} />
     </Frame>
   </Step>
   <Step title="Start editing">
     Check the current approvals and approval window, then click **Edit rule**.
 
-    <Frame caption="Figure 2: The current rule for Add user.">
-      <img src="/images/approvals/console-policy-summary.png" alt="Add user rule summary showing 1 approval needed from 1 person, the standard approval window, and an Edit rule button." style={{ maxWidth: "340px" }} />
+    <Frame caption="Figure 2: The current policy for Add user.">
+      <img src="/images/approvals/console-policy-summary.png" alt="Add user policy summary showing 1 approval needed from 1 person, the standard approval window, and an Edit rule button." style={{ maxWidth: "340px" }} />
     </Frame>
   </Step>
   <Step title="Choose who can approve">
@@ -29,13 +29,13 @@ description: "Choose who approves an action, how many approvals it needs, and ho
     Choose how long approvers have: **Standard (24 hours)**, **1 hour**, **8 hours**, **24 hours**, **48 hours** or **7 days**. Then click **Review**. **Organization default** always uses the standard window, so it skips this step.
   </Step>
   <Step title="Save">
-    If the console shows "This makes add user easier to authorize", the new rule needs fewer approvals than today. Check that this is what you want.
+    If the console shows "This makes add user easier to authorize", the new policy needs fewer approvals than today. Check that this is what you want.
 
-    Click **Save policy**. The console shows "Sent for approval", and the rule shows **Update pending approval** until approvers approve the change. To remove an action's own rule so it follows **Organization default** again, click **Delete override** instead.
+    Click **Save policy**. The console shows "Sent for approval", and the policy shows **Update pending approval** until approvers approve the change. To remove an action's own policy so it follows **Organization default** again, click **Delete override** instead.
   </Step>
 </Steps>
 
-{/* TK: the console's review step says "The new rule takes effect as soon as you save", but the backend always sends rule changes for approval. Ask product to align the console copy. */}
+{/* TK: the console's review step says "The new rule takes effect as soon as you save", but the backend always sends policy changes for approval. Ask product to align the console copy. */}
 
 ## If it does not work
 
