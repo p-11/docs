@@ -1,6 +1,26 @@
 ---
 title: "Quorums"
-description: "Define who must approve an operation and how many approvals are needed."
+description: "How Strongpoint counts approvals and rejections to decide a request."
 ---
 
-<Note>This page is a placeholder. Content coming soon.</Note>
+A quorum is written as M of N. N is the number of approvers who qualify when the request starts, and M is how many of them must approve.
+
+An approver qualifies if they are an active member with an enrolled iPhone. When a policy names a role, everyone holding that role at that moment counts. Strongpoint fixes M and N when the request starts, so later changes to the policy or the team do not affect it.
+
+## How a request resolves
+
+- The request completes as soon as M approvers approve. The rest do not need to respond.
+- A rejection ends the request only when M approvals are no longer possible.
+- If a login's number match fails, the request shows **Failed** instead of **Rejected**.
+- Each approver counts once, even with more than one enrolled iPhone.
+
+## Example
+
+Your **Add user** policy names Ana, Ben and Chloe and needs 2 approvals.
+
+- Ana approves. One of two approvals is in, so the request stays open.
+- Ben approves. The quorum is met, and the invitation goes out. Chloe's answer is no longer needed.
+
+Now suppose Ana rejects instead. The request stays open, because Ben and Chloe can still both approve. If Ben also rejects, only Chloe is left, so two approvals are no longer possible and the request becomes **Rejected**.
+
+The example shows that a request ends early only when the remaining approvers can no longer reach M.

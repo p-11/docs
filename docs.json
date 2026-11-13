@@ -43,7 +43,7 @@
         ]
       },
       {
-        "group": "Organisation",
+        "group": "Organization",
         "pages": [
           "organisation/users",
           "organisation/send-device-enrollment",
@@ -51,12 +51,26 @@
         ]
       },
       {
-        "group": "Policies & Approvals",
+        "group": "Approvals",
         "pages": [
           "policies-and-approvals/approvals",
-          "policies-and-approvals/ios-authenticator",
-          "policies-and-approvals/quorums",
-          "policies-and-approvals/policies"
+          "policies-and-approvals/approve-request",
+          "policies-and-approvals/track-requests",
+          "policies-and-approvals/cancel-request",
+          {
+            "group": "Reference",
+            "pages": [
+              "policies-and-approvals/request-statuses",
+              "policies-and-approvals/quorums"
+            ]
+          }
+        ]
+      },
+      {
+        "group": "Policies",
+        "pages": [
+          "policies-and-approvals/policies",
+          "policies-and-approvals/change-policy"
         ]
       },
       {
@@ -121,5 +135,11 @@
   },
   "fonts": {
     "family": "Geist"
-  }
+  },
+  "redirects": [
+    {
+      "source": "/policies-and-approvals/ios-authenticator",
+      "destination": "/policies-and-approvals/approve-request"
+    }
+  ]
 }

@@ -1,6 +1,57 @@
 ---
 title: "Policies"
-description: "Set the rules that govern operations in your organisation."
+sidebarTitle: "Overview"
 ---
 
-<Note>This page is a placeholder. Content coming soon.</Note>
+Policies set the rules for [approvals](/policies-and-approvals/approvals). For example, a policy for adding users might require 2 of 3 named approvers to approve each invitation. Each policy sets who can approve an action, how many approvals it needs, and how long approvers have.
+
+When someone starts an action, Strongpoint uses that action's policy to create the approval request.
+
+## Who can approve
+
+- **Roles.** Choose Owners, Admins, Signers, or a mix. Everyone with the role when a request starts can approve it.
+- **People.** Name any member. They stay on the policy until someone removes them.
+
+Approvers need an enrolled iPhone. The person who starts a request can also approve it if they are an approver, so to require a second person, set **Approvals needed** to at least 2. Members never approve their own new device.
+
+## Which policy applies
+
+Each action uses its own policy. An action without one follows your default policy, shown as **Organization default** in the console. A new organization's default policy needs 1 approval, from its first enrolled member.
+
+Accounts can also have their own **Send** and **Manage** policies. You set them when you [create the account](/onboarding/create-account), or later from the account's **Policies** tab: click the policy, then **Override rule** and **Request change**.
+
+## Actions with policies
+
+| Action | Covers |
+|---|---|
+| **Organization default** | Every action without its own policy |
+| **Update approval policy** | Changes to any policy |
+| **Add user** | Inviting someone to the organization |
+| **Change role** | Giving a member a different role |
+| **Enroll device** | Sending a member a link to set up a new iPhone |
+| **Approve device** | Letting a member's new iPhone sign in and approve |
+| **Add key**, **Rotate key**, **Delete key** | Changes to keys in a key ring |
+| **Send** (per account) | Moving funds out of an account |
+| **Manage** (per account) | Archiving or unarchiving an account, and creating a wallet |
+| **New log in** (fixed) | 1 approval, from your own enrolled iPhone |
+| Signing with a key (fixed) | Every enrolled member approves |
+
+{/* TK: the console's Policies page lists "Sign payload: No approval needed", but the backend requires unanimous approval from every enrolled member for key signing (rs/kms/src/domain/sign/raise.rs). Ask product to fix the console copy. */}
+{/* TK: the backend also supports policies for a single key ring, but the console marks them "Coming soon". Document them once they can be set. */}
+
+## Limits
+
+- A policy needs at least 1 approver and 1 approval, and no more approvals than it has approvers.
+- The Auditor role can't be chosen as an approver role.
+- If fewer approvers qualify than a policy needs, Strongpoint refuses the action before it starts, for example "Not enough active approvers remain to meet the invitation approval policy." It never lowers the number of approvals. An Owner or Admin fixes the policy. If the policy for **Update approval policy** itself can't reach its approvals, contact [Strongpoint support](mailto:support@strongpoint.projecteleven.com).
+- The default policy always exists and uses the standard approval window.
+- Changing a policy is itself an approval request, decided by the policy for **Update approval policy**. Open requests keep the policy they started with.
+- A person named on a policy can't be removed from the organization until you take them off it. **Team** shows "Cannot remove this member yet".
+
+## Tasks
+
+<CardGroup cols={2}>
+  <Card title="Change a policy" icon="shield-halved" href="/policies-and-approvals/change-policy">
+    Choose who approves an action and how many approvals it needs.
+  </Card>
+</CardGroup>
