@@ -3,9 +3,9 @@ title: "Create an account"
 description: "Create an account to hold your assets, and choose who approves sending funds."
 ---
 
-<Info>Requires the Owner or Admin role.</Info>
+<Info>Requires the Owner or Admin role. Creating the account needs no approval. Each wallet it starts with does.</Info>
 
-An account holds your assets. When you create it, you choose who approves sending funds out of it. Its other actions, such as adding a wallet, follow your organization's [approval rules](/policies-and-approvals/policies).
+An account holds your assets in one or more wallets. When you create it, you choose who approves sending funds out of it. Adding wallets and archiving follow your organization's [policies](/policies-and-approvals/policies).
 
 ## Creating an account
 
@@ -13,18 +13,18 @@ An account holds your assets. When you create it, you choose who approves sendin
   <Step title="Start a new account">
     Go to **Portfolio** and click **Add account**.
   </Step>
-  <Step title="Name it and choose assets">
-    Enter an **Account name**, for example "Treasury". Under **Select assets to manage**, choose the assets it will hold, then click **Continue**. You can add more later.
+  <Step title="Name it and choose its key ring and assets">
+    Enter an **Account name**, for example "Treasury". Under **Key ring**, keep **New AWS KMS key ring**, or choose a [PEAK key ring](/kms/create-key-ring#peak-key-rings) you have already set up. Under **Select assets to manage**, choose the assets it will hold. Then click **Continue**.
   </Step>
   <Step title="Choose who approves sends">
-    **Who can approve sends** starts with your organization default. To keep it, click **Continue**. To change it, click the pencil, choose approvers and **Approvals needed**, then click **Override and Continue**.
+    **Who can approve sends** starts with your organization default. To keep it, click **Continue**. To change it, click the pencil, choose approvers and **Approvals needed**, then click **Continue**.
 
-    <Frame caption="Figure 1: Sends start with your organization default rule.">
-      <img src="/images/onboarding/account-sends.png" alt="Who can approve sends step showing 1 approval needed from 1 person, with Back, Cancel and Continue buttons." style={{ maxWidth: "340px" }} />
+    <Frame caption="Figure 1: Sends start with your organization default policy.">
+      <img src="/images/onboarding/account-sends.png" alt="Who can approve sends step showing the organization default approvers and approvals needed, with Back, Cancel and Continue buttons." style={{ maxWidth: "340px" }} />
     </Frame>
   </Step>
   <Step title="Create the account">
-    On **Review account**, check the name, assets, and approvers, then click **Create account**. The console opens your new account. If the account needs a wallet for a network, the console shows "Approval requested" instead: each wallet waits for a **Create Wallet** approval.
+    On **Review account**, check the name, key ring, assets and approvers, then click **Create account**. The console shows "Approval requested": Strongpoint creates one wallet for each network you chose, and each wallet waits for a **Create Wallet** approval. Once approved, you can [receive funds](/portfolio/receive-funds) into it.
   </Step>
 </Steps>
 
@@ -32,8 +32,8 @@ An account holds your assets. When you create it, you choose who approves sendin
 
 | What you see | What to do |
 |---|---|
-| "Could not create the account" | Click **Create account** again. If it still fails, contact [Strongpoint support](mailto:support@strongpoint.projecteleven.com). |
-| "Create account is not available yet" | Account creation is not available in your environment. Contact [Strongpoint support](mailto:support@strongpoint.projecteleven.com). |
-| "Networks are not available right now" | The asset list did not load. Wait a moment and try again. |
-
-{/* TK: add wallets and a link to sending and receiving once those pages are published. */}
+| "An account with this name already exists." | Choose another name. |
+| "This key ring cannot back a new account. It may already back another one." | Choose **New AWS KMS key ring**, or another PEAK key ring. |
+| "Waiting for the PEAK root of this key ring to be established." | Wait until the key ring's holders have joined on their iPhones. |
+| "Networks are not available right now. Try again in a moment." | The asset list did not load. Wait a moment and try again. |
+| "Could not create the account." | Click **Create account** again. If it still fails, contact [Strongpoint support](mailto:support@strongpoint.projecteleven.com). |
