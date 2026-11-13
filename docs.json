@@ -20,7 +20,17 @@
         "group": "Getting started",
         "pages": [
           "getting-started/basics",
-          "getting-started/setup"
+          {
+            "group": "Onboarding",
+            "pages": [
+              "onboarding",
+              "onboarding/accept-invite",
+              "onboarding/enroll-iphone",
+              "onboarding/log-in",
+              "onboarding/invite-users",
+              "onboarding/create-account"
+            ]
+          }
         ]
       },
       {
@@ -36,6 +46,7 @@
         "group": "Organisation",
         "pages": [
           "organisation/users",
+          "organisation/send-device-enrollment",
           "organisation/roles-and-permissions"
         ]
       },
