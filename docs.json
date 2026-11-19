@@ -36,10 +36,19 @@
       {
         "group": "Portfolio",
         "pages": [
-          "portfolio/accounts",
-          "portfolio/wallets",
-          "portfolio/addresses",
-          "portfolio/sending-and-receiving"
+          "portfolio/overview",
+          "portfolio/receive-funds",
+          "portfolio/send-funds",
+          "portfolio/add-wallet",
+          "portfolio/manage-account",
+          "portfolio/address-book",
+          {
+            "group": "Reference",
+            "pages": [
+              "portfolio/transfer-statuses",
+              "portfolio/supported-networks"
+            ]
+          }
         ]
       },
       {
@@ -74,12 +83,21 @@
         ]
       },
       {
-        "group": "KMS",
+        "group": "Signing keys",
         "pages": [
-          "kms/keyrings",
-          "kms/keys",
-          "kms/key-versions",
-          "kms/providers"
+          "kms/overview",
+          "kms/create-key-ring",
+          "kms/add-key",
+          "kms/sign-payload",
+          "kms/rotate-key",
+          "kms/disable-or-delete-key",
+          {
+            "group": "Reference",
+            "pages": [
+              "kms/algorithms-and-providers",
+              "kms/key-states"
+            ]
+          }
         ]
       },
       {
@@ -140,6 +158,38 @@
     {
       "source": "/policies-and-approvals/ios-authenticator",
       "destination": "/policies-and-approvals/approve-request"
+    },
+    {
+      "source": "/portfolio/accounts",
+      "destination": "/portfolio/overview"
+    },
+    {
+      "source": "/portfolio/wallets",
+      "destination": "/portfolio/add-wallet"
+    },
+    {
+      "source": "/portfolio/addresses",
+      "destination": "/portfolio/receive-funds"
+    },
+    {
+      "source": "/portfolio/sending-and-receiving",
+      "destination": "/portfolio/send-funds"
+    },
+    {
+      "source": "/kms/keyrings",
+      "destination": "/kms/overview"
+    },
+    {
+      "source": "/kms/keys",
+      "destination": "/kms/overview"
+    },
+    {
+      "source": "/kms/key-versions",
+      "destination": "/kms/rotate-key"
+    },
+    {
+      "source": "/kms/providers",
+      "destination": "/kms/algorithms-and-providers"
     }
   ]
 }

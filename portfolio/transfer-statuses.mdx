@@ -1,0 +1,38 @@
+---
+title: "Send and deposit statuses"
+description: "What each status on an account's Activity tab means."
+---
+
+## Sends
+
+The account's **Activity** list shows **Pending** until a send finishes. Click a send to see its detailed status.
+
+| Detailed status | Meaning |
+|---|---|
+| **Preparing** | Strongpoint is building the transaction. |
+| **Awaiting approval** | The send is waiting for approvers. It shows **Needs review** if it is waiting for you. |
+| **Approved** | Enough approvers approved. Strongpoint is signing the transaction. |
+| **Waiting for key ring holders** | The account uses a PEAK key ring, and its holders must sign on their devices. |
+| **Signed** | The transaction is signed and about to be broadcast. |
+| **Submitted** | The transaction is on the network, waiting for confirmations. |
+| **Confirmed** | The network confirmed the transaction. The funds have left the wallet. |
+| **Rejected** | Too many approvers rejected the send. No funds moved. |
+| **Expired** | The 24-hour approval window closed first. No funds moved. |
+| **Cancelled** | The request was withdrawn, or someone clicked **Cancel send** while the send waited for key ring holders. No funds moved. |
+| **Failed** | The send could not be completed, for example because the network refused it or never confirmed it in time. Check the wallet balance before you try again. |
+
+## Deposits
+
+| List status | Detailed status | Meaning |
+|---|---|---|
+| **Pending** | **Confirming** | Strongpoint has seen the deposit and is waiting for network confirmations. |
+| **Confirmed** | **Confirmed** | The deposit is confirmed and counts toward the **Available** balance. |
+
+## Wallets
+
+| Status | Meaning |
+|---|---|
+| **Setting up** | The wallet is waiting for its **Create Wallet** request to be approved. |
+| **Setup failed** | The request was rejected, or the wallet could not be set up. Add a new wallet to try again. |
+
+A ready wallet shows no status.

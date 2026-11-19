@@ -1,0 +1,26 @@
+---
+title: "Algorithms and providers"
+description: "The signing algorithms and key providers Strongpoint supports."
+---
+
+## Algorithms
+
+| Algorithm | Type | Standard | Notes |
+|---|---|---|---|
+| **ML-DSA-65** | Post-quantum | FIPS 204, category 3 | Recommended for general use |
+| **ML-DSA-87** | Post-quantum | FIPS 204, category 5 | Strongest option |
+| **ECDSA-P256** | Classical | FIPS 186-5 | Works with most existing verifiers |
+| **ECDSA-secp256k1** | Classical | secp256k1 | For blockchains and verifiers that use secp256k1 |
+
+Classical algorithms are not quantum-safe. To stay compatible with today's verifiers while you move to post-quantum signing, put a classical key and an ML-DSA key in the same key ring. The key ring then returns both signatures.
+
+## Providers
+
+| Provider | What it is | Algorithms |
+|---|---|---|
+| **AWS KMS** | Cloud KMS, run by Strongpoint | ML-DSA-65, ML-DSA-87, ECDSA-P256, ECDSA-secp256k1 |
+| **PEAK** | Threshold enclave, with key shares held on your members' devices | ML-DSA-65, ML-DSA-87, ECDSA-P256, ECDSA-secp256k1 |
+
+Strongpoint runs the AWS KMS provider for you. PEAK keys live only in PEAK key rings, and every other key ring uses AWS KMS. See [PEAK key rings](/kms/create-key-ring#peak-key-rings).
+
+Each key ring lists the providers its keys may use. You choose them when you [create the key ring](/kms/create-key-ring), and they stay fixed after that.
