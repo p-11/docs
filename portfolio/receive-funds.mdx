@@ -1,6 +1,6 @@
 ---
 title: "Receive funds"
-description: "Get a deposit address for an account and check when the funds arrive."
+description: "Funds arrive at the address of one of an account's wallets. Share that address, then check when the funds arrive."
 ---
 
 <Info>Any role can view deposit addresses. Receiving funds needs no approval.</Info>
@@ -34,15 +34,17 @@ description: "Get a deposit address for an account and check when the funds arri
 
 ## When the funds arrive
 
-Strongpoint checks each network about once a minute. A deposit appears on the account's **Activity** tab as **Receive**, with the status **Pending**. Once the network has confirmed it enough times, it shows **Received** and **Confirmed**, and counts toward the wallet's **Available** balance. A Zcash deposit needs 10 confirmations.
+Strongpoint checks each network about once a minute. A deposit appears on the account's **Activity** tab as **Receive**, with the status **Pending**. Once the network has confirmed it enough times, it shows **Received** and **Confirmed**, and counts toward the wallet's **Available** balance.
+
+Each network needs its own number of confirmations. For example, a Zcash deposit needs 10 confirmations, which takes about 13 minutes. See [Supported networks](/portfolio/supported-networks) for each network.
 
 ## If it does not work
 
 | What you see | What to do |
 |---|---|
-| "No wallets on this account yet." | [Add a wallet](/portfolio/add-wallet) for the network you want to receive on. |
+| "No wallets on this account yet." | [Add a wallet](/portfolio/manage-wallets) for the network you want to receive on. |
 | "This wallet is still being set up." | The wallet is waiting for approval. Check its request on the **Approvals** page. |
-| "Provisioning failed" | The wallet could not be set up. [Add a new wallet](/portfolio/add-wallet) and deposit into that one. |
+| "Provisioning failed" | The wallet could not be set up. [Add a new wallet](/portfolio/manage-wallets) and deposit into that one. |
 | "Deposit addresses are not available yet." | The wallet's network can't receive funds yet. See [Supported networks](/portfolio/supported-networks). |
 | A deposit stays **Pending** | The network has not confirmed it enough times yet. Check again in a few minutes. |
 | A deposit does not appear at all | Check that the sender used the right address and network. If they did, contact [Strongpoint support](mailto:support@strongpoint.projecteleven.com) with the transaction ID. |

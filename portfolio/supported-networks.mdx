@@ -1,11 +1,11 @@
 ---
 title: "Supported networks"
-description: "The networks and assets Strongpoint custody supports, with their confirmations and fees."
+description: "The networks and assets Strongpoint custody supports, with their confirmations, fees and block explorers."
 ---
 
 | Network | Asset | Addresses | Confirmations for a deposit | Network fee |
 |---|---|---|---|---|
-| Zcash | ZEC | Transparent (starting with `t1`) | 10 | Set by Strongpoint under the Zcash fee rules (ZIP 317). From 0.0001 ZEC, more for larger transactions |
+| Zcash | ZEC | Transparent (starting with `t1`) | 10 (about 13 minutes) | Set by Strongpoint under the Zcash fee rules |
 
 Each Zcash wallet has one transparent address, and shows the **Transparent** label.
 
@@ -13,6 +13,10 @@ The console lists more assets when you create an account or add a wallet. Choose
 
 {/* TK: confirm with product which networks are live in production. The backend also supports Ethereum (native ETH only, no USDC) where an Ethereum node is configured, but the production snapshot is Zcash only. NEAR, XRP Ledger and Bitcoin can be selected but have no addresses or sends. */}
 
-## Block explorer
+## Block explorers
 
-To look up a Zcash transaction, open it on the account's **Activity** tab and click **Open in explorer**.
+To look up a transaction or address, use the recommended explorer for its network. The console's **Open in explorer** button opens the same one.
+
+| Network | Recommended explorer |
+|---|---|
+| Zcash | [Zcash Explorer](https://mainnet.zcashexplorer.app) |
