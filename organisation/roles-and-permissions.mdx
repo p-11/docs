@@ -1,6 +1,56 @@
 ---
 title: "Roles and permissions"
-description: "Control what each user can see and do."
+description: "What each role can see and do in Strongpoint."
 ---
 
-<Note>This page is a placeholder. Content coming soon.</Note>
+Every member of your organization has one role. The role decides what they can see and do in the console. Who approves each request is set separately, by your [policies](/policies-and-approvals/policies).
+
+## Roles
+
+| Role | Who it's for |
+|---|---|
+| **Owner** | Full control of the organization, including inviting and managing other Owners and setting up the root key. |
+| **Admin** | Runs the organization day to day: people, accounts, policies and keys. An Admin can't invite, change or remove an Owner. |
+| **Operator** | Moves funds: sends, adds wallets and creates deposit addresses. Operators can't manage people, policies or keys. |
+| **Auditor** | Read-only access to accounts, approvals, keys and the audit log. |
+
+## What each role can do
+
+| Action | Owner | Admin | Operator | Auditor |
+|---|---|---|---|---|
+| View Portfolio, Approvals, Signing keys and Team | Yes | Yes | Yes | Yes |
+| Send funds and cancel a send | Yes | Yes | Yes | No |
+| Add a wallet or a new address | Yes | Yes | Yes | No |
+| Create, rename or archive an account | Yes | Yes | No | No |
+| Change the [address book](/address-book/overview) | Yes | Yes | No | No |
+| View policies | Yes | Yes | Yes | No |
+| Change policies | Yes | Yes | No | No |
+| Invite people, change roles, remove members | Yes | Yes, except Owners | No | No |
+| Send a device enrollment | Yes | Yes | No | No |
+| View and export the audit log | Yes | Yes | No | Yes |
+| See the **Root key** tab | Yes | Yes | No | No |
+| Set up the root key and backup key | Yes | No | No | No |
+| Sign a payload | Root key holders | Root key holders | Root key holders | No |
+
+{/* TK: Tyler (Nov 2026) says Operators can add wallets, that Owners and Admins control the address book, and that only root key holders can sign a payload. In the code (rs/authz/cedar/policies.cedar), Operators can't add wallets, Operators can request address-book changes, and Owners and Admins sign payloads. */}
+
+Approving a request doesn't depend on role. Anyone a policy names as an approver can approve, as long as they have an enrolled iPhone. Policies can name Owners, Admins and Operators as approver roles, but not Auditors.
+
+## What each role sees in the sidebar
+
+| Role | Sidebar |
+|---|---|
+| Owner, Admin | Portfolio, Approvals, Signing keys, Policies, Audit, Team |
+| Operator | Portfolio, Approvals, Signing keys, Policies, Team |
+| Auditor | Portfolio, Approvals, Signing keys, Audit, Team |
+
+## Tasks
+
+<CardGroup cols={2}>
+  <Card title="Change a member's role" icon="user-gear" href="/organisation/change-role">
+    Give a member a different role.
+  </Card>
+  <Card title="Invite your team" icon="user-plus" href="/onboarding/invite-users">
+    Invite someone with a role.
+  </Card>
+</CardGroup>

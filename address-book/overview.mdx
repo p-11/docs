@@ -1,0 +1,55 @@
+---
+title: "Address book"
+sidebarTitle: "Overview"
+---
+
+The address book holds the external addresses your organization sends to, each saved under a name, such as an exchange account or a partner's wallet. When you [send funds](/portfolio/send-funds), you pick a saved address by name, and approvers see that name on the request.
+
+Every change to the address book is an approval request, so a new destination can't be used until your approvers agree.
+
+To open it, click your name at the bottom of the sidebar, then **Settings**. The address book is the first tab.
+
+<Frame caption="Figure 1: Saved addresses, with changes still waiting for approval.">
+  <img src="/images/address-book/console-address-book.png" alt="Address book with five Zcash addresses and their full addresses. Some show Archive pending, Rename pending or Pending." style={{ maxWidth: "560px" }} />
+</Frame>
+
+## Who can change it
+
+Owners and Admins add, rename and archive addresses. Every role can view the address book.
+
+{/* TK: Tyler (Nov 2026) says Owners and Admins control the address book. In the code, Operators can also request adds, renames and archives (rs/authz/cedar/policies.cedar, operator-custody-operate). */}
+
+## Policies
+
+| Change | Policy |
+|---|---|
+| Add an address | **Add address** |
+| Rename an address | **Rename address** |
+| Archive an address | **Archive address** |
+| Turn **Only send to the address book** on or off | **Change approval rule** |
+
+Until you set them, the three address policies follow your **Organization default**. See [Change a policy](/policies-and-approvals/change-policy).
+
+## Statuses
+
+| Status | Meaning |
+|---|---|
+| **Pending** | The add is waiting for approval. The address can't be used yet. |
+| **Rename pending** | The new name is waiting for approval. |
+| **Archive pending** | The archive is waiting for approval. Sends can still use the address. |
+
+An address with no status is ready to use. If a pending request waits for your approval, click its status to open it in **Approvals**.
+
+## Tasks
+
+<CardGroup cols={3}>
+  <Card title="Add an address" icon="plus" href="/address-book/add-address">
+    Save a new destination.
+  </Card>
+  <Card title="Rename or archive an address" icon="pen" href="/address-book/rename-or-archive">
+    Change a name, or retire an address.
+  </Card>
+  <Card title="Restrict sends to the address book" icon="lock" href="/address-book/restrict-sends">
+    Allow sends only to saved addresses.
+  </Card>
+</CardGroup>

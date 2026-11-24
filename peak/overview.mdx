@@ -1,0 +1,57 @@
+---
+title: "PEAK"
+sidebarTitle: "Overview"
+---
+
+PEAK is how Strongpoint protects your organization's keys. Your organization has one root key, and no one ever holds it whole: it is split into shares, and each holder keeps a share on their iPhone. Using the root key needs approval from enough holders.
+
+A separate backup key, kept on dedicated backup iPhones stored offline, can recover the root key if holders lose their shares.
+
+{/* TK: docs/peak/initial-deployment.md says production PEAK deploys are not supported on strongpoint main yet (ENG-3832). Confirm launch timing before publishing. */}
+
+## Root key and backup key
+
+| Key | Held by | Used for |
+|---|---|---|
+| **Root key** | 3 to 30 members, each on their everyday iPhone | Creating accounts and key rings, and creating the backup key |
+| **Backup key** | 3 to 30 dedicated backup iPhones, kept off and stored apart | Recovering the root key |
+
+Any member with an enrolled iPhone can hold a share, whatever their role. Holders approve PEAK requests on their iPhone like any other approval.
+
+## Setting up your organization
+
+Until setup is finished, an **Org setup** card in the sidebar shows each step and who it's waiting on. Portfolio appears once the root key and backup key are both in place.
+
+| Step | What happens | Who |
+|---|---|---|
+| **Invite members** | Invite at least 2 more people. | Owner or Admin |
+| **Device enrollment** | At least 3 members enroll their iPhones. | New members, then approvers |
+| **Set up root key** | Choose the holders. Every holder approves, then accepts their share. | Owner, then holders |
+| **Enroll backup iPhones** | Each backup holder pairs a dedicated backup iPhone. | Backup holders |
+| **Set up backup key** | Root key holders and every backup iPhone approve, then the backup iPhones accept their shares. | Owner, then holders |
+
+## Who can do what
+
+- **Owners** set up the root key and the backup key, test them, and start a recovery.
+- **Owners and Admins** see the **Root key** tab on **Signing keys**, and request device enrollments for holders.
+- **Holders**, whatever their role, approve PEAK requests and accept their shares on their iPhone.
+
+## Tasks
+
+<CardGroup cols={2}>
+  <Card title="Set up the root key" icon="key" href="/peak/set-up-root-key">
+    Choose the holders and request the root key.
+  </Card>
+  <Card title="Accept your key share" icon="mobile" href="/peak/accept-key-share">
+    Approve and receive your share on your iPhone.
+  </Card>
+  <Card title="Set up the backup key" icon="box-archive" href="/peak/set-up-backup-key">
+    Enroll backup iPhones and create the backup key.
+  </Card>
+  <Card title="Test the root key" icon="vial" href="/peak/test-root-key">
+    Check that every holder can still use their share.
+  </Card>
+  <Card title="Recover the root key" icon="life-ring" href="/peak/recover-root-key">
+    Restore the root key to new holders.
+  </Card>
+</CardGroup>

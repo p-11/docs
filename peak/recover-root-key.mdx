@@ -1,0 +1,33 @@
+---
+title: "Recover the root key"
+description: "Restore the root key to a new group of holders with the backup key."
+---
+
+<Info>Requires the Owner role, and an active backup key.</Info>
+
+If root key holders lose their shares, the backup iPhones can restore the root key to a new group of holders.
+
+## Requesting a recovery
+
+<Steps>
+  <Step title="Start the recovery">
+    Go to **Signing keys**, open **Root key**, and click **Request recovery** under **Organization key recovery**.
+  </Step>
+  <Step title="Choose the new holders">
+    Pick the new root key holders and how many must approve, then submit the request.
+  </Step>
+  <Step title="Wait for the safety window">
+    Every Owner and Admin is told by email and in the app. The next step can start 24 hours after the request, or sooner once every Owner and Admin acknowledges it in the app. The recovery stays open for 72 hours.
+  </Step>
+</Steps>
+
+Any Owner can stop the recovery with **Cancel recovery**. A cancelled recovery can't be reopened.
+
+{/* TK: confirm the backup iPhone steps that complete a recovery once they're designed. */}
+
+## If it does not work
+
+| What you see | What to do |
+|---|---|
+| "A recovery needs an active backup. Create a backup first." | [Set up the backup key](/peak/set-up-backup-key) first. |
+| "A recovery cannot be requested now." | Another recovery may still be open. Check the **Root key** tab. |

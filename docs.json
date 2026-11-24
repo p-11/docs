@@ -41,7 +41,6 @@
           "portfolio/send-funds",
           "portfolio/add-wallet",
           "portfolio/manage-account",
-          "portfolio/address-book",
           {
             "group": "Reference",
             "pages": [
@@ -52,11 +51,21 @@
         ]
       },
       {
+        "group": "Address book",
+        "pages": [
+          "address-book/overview",
+          "address-book/add-address",
+          "address-book/rename-or-archive",
+          "address-book/restrict-sends"
+        ]
+      },
+      {
         "group": "Organization",
         "pages": [
           "organisation/users",
           "organisation/send-device-enrollment",
-          "organisation/roles-and-permissions"
+          "organisation/roles-and-permissions",
+          "organisation/change-role"
         ]
       },
       {
@@ -101,10 +110,20 @@
         ]
       },
       {
+        "group": "PEAK",
+        "pages": [
+          "peak/overview",
+          "peak/set-up-root-key",
+          "peak/accept-key-share",
+          "peak/set-up-backup-key",
+          "peak/test-root-key",
+          "peak/recover-root-key"
+        ]
+      },
+      {
         "group": "Reference",
         "pages": [
-          "reference/changelog",
-          "reference/peak"
+          "reference/changelog"
         ]
       }
     ]
@@ -190,6 +209,14 @@
     {
       "source": "/kms/providers",
       "destination": "/kms/algorithms-and-providers"
+    },
+    {
+      "source": "/reference/peak",
+      "destination": "/peak/overview"
+    },
+    {
+      "source": "/portfolio/address-book",
+      "destination": "/address-book/overview"
     }
   ]
 }

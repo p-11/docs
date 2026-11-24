@@ -1,0 +1,41 @@
+---
+title: "Set up the backup key"
+description: "Choose the backup holders, enroll their backup iPhones, and create the backup key."
+---
+
+<Info>Requires the Owner role. The root key must be active first.</Info>
+
+A backup iPhone is a separate iPhone, not the one its holder uses every day. It stays off and stored apart, and only comes out to recover the root key.
+
+## Choosing the backup holders
+
+<Steps>
+  <Step title="Pick the holders">
+    Go to **Signing keys**, open **Root key**, and select **Backup**. Click **Set backup iPhones**, pick between 3 and 30 people, and review. Strongpoint sets how many backup iPhones must approve a recovery.
+  </Step>
+  <Step title="Request their enrollments">
+    Click **Request device enrollment for all**. Once approvers approve, each holder gets an enrollment link by email.
+  </Step>
+</Steps>
+
+## Enrolling a backup iPhone
+
+Each backup holder follows their link and scans the QR code with the Strongpoint Authenticator on the backup iPhone. Then they enter the six-digit code the app shows. They get one attempt at the code. An approver then approves the backup iPhone, and the app shows "Backup iPhone ready".
+
+## Creating the backup key
+
+Once every backup iPhone is enrolled, click **Create backup key**, check the holders, and click **Confirm and request backup key**. Two sets of approvals follow:
+
+1. Root key holders approve releasing their shares.
+2. Every backup iPhone approves on itself.
+
+Strongpoint then sends each backup iPhone its share, which the holder [accepts](/peak/accept-key-share) before turning the backup iPhone off again.
+
+## If it does not work
+
+| What you see | What to do |
+|---|---|
+| "Use a dedicated iPhone" | The holder used their everyday iPhone. Enroll a different iPhone as the backup iPhone. |
+| "This iPhone can't be a backup iPhone" | Turn on Face ID or Touch ID on the backup iPhone, then try again. |
+| "Only owners choose the backup holders and create the backup key." | Ask an Owner. |
+| **Custody paused** | Too few backup iPhones remain to recover the root key. Click **Review backup** and enroll replacements. |

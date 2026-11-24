@@ -1,0 +1,31 @@
+---
+title: "Test the root key"
+description: "Check that every holder can still use their share, without running anything."
+---
+
+<Info>Requires the Owner role. The root key must be active.</Info>
+
+A test asks every holder to approve a request that does nothing else. It passes once all holders approve, and confirms each share still works.
+
+## Testing the root key
+
+<Steps>
+  <Step title="Start the test">
+    Go to **Signing keys**, open **Root key**, and click **Test root key**. Click **Start test**.
+  </Step>
+  <Step title="Holders approve">
+    Each holder approves the **Test Root Key** request on their iPhone. The test expires after 30 minutes.
+  </Step>
+  <Step title="Check the result">
+    The **Root key** tab shows whether the test passed. Past tests are listed under **History**.
+  </Step>
+</Steps>
+
+To test the backup key, open **Backup** and use **Test your backup key** the same way. To stop a running test, click **Abort test**.
+
+## If it does not work
+
+| What you see | What to do |
+|---|---|
+| "A test of this key is already open." | Abort the open test first, or wait for it to finish. |
+| The test didn't pass | A holder declined, didn't respond in time, or their share failed. Ask them to check their iPhone, and replace the holder if needed. |
