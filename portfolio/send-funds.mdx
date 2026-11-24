@@ -3,7 +3,11 @@ title: "Send funds"
 description: "Request a transfer out of an account. It goes out once your approvers approve it."
 ---
 
-<Info>Requires the Owner or Admin role. Each send is an approval request, decided by the account's **Send** policy.</Info>
+Funds leave an account from one of its wallets. The account's **Send** policy decides who must approve.
+
+<Info>Requires the Owner, Admin or Operator role. Each send is an approval request, decided by the account's **Send** policy.</Info>
+
+{/* TK: Tyler (Nov 2026) says each account names the operators who can start sends. The code has no per-account sender set: any Owner, Admin or Operator can start a send from any account. */}
 
 ## Requesting a send
 
@@ -55,5 +59,5 @@ description: "Request a transfer out of an account. It goes out once your approv
 | "This address isn't in your address book." | You can still send. Check the address carefully first, or [save it to the address book](/portfolio/address-book). |
 | **External transfer** is missing | Your organization allows sends only to your own wallets and saved addresses. [Add the address](/portfolio/address-book) to the address book first. |
 | "Sending is coming soon." | The account has no wallet on a network that supports sending. See [Supported networks](/portfolio/supported-networks). |
-| "You do not have permission to send from this account." | Ask an Owner or Admin to send the funds. |
+| "You do not have permission to send from this account." | Ask an Owner, Admin or Operator to send the funds. |
 | "Could not request the transfer. Try again." | Try again. If it keeps happening, contact [Strongpoint support](mailto:support@strongpoint.projecteleven.com). |

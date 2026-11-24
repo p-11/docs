@@ -1,9 +1,13 @@
 ---
 title: "Sign a payload"
-description: "Sign a message with every key in a key ring, once all your approvers approve."
+description: "Sign a message with a key ring, once your root key holders approve."
 ---
 
-<Info>Requires the Owner or Admin role. Every enrolled member of your organization must approve each signature, within 24 hours.</Info>
+Signing a payload is the one action you take in **Signing keys**. Strongpoint signs exactly what you enter, so check the payload carefully before you request a signature.
+
+<Info>Only root key holders can sign a payload. Each signature needs approval from your root key holders, within 24 hours.</Info>
+
+{/* TK: Tyler (Nov 2026) says only root key holders can sign, and that signing needs root key approvals. In the code, Owners and Admins can sign (Cedar signActions), every enrolled member must approve (rs/kms/src/domain/sign/raise.rs, unanimous), the console says "Awaiting unanimous approval", PEAK key rings can't sign from the console, and a key ring that backs an account is refused. */}
 
 ## Signing a payload
 
@@ -19,7 +23,7 @@ description: "Sign a message with every key in a key ring, once all your approve
     </Frame>
   </Step>
   <Step title="Wait for approval">
-    The dialog shows "Awaiting unanimous approval". Every enrolled member approves the request on their iPhone. Strongpoint signs as soon as the last approval arrives, even if you close the dialog.
+    Your root key holders approve the request on their iPhones. Strongpoint signs as soon as the last approval arrives, even if you close the dialog.
   </Step>
   <Step title="Copy the signatures">
     The dialog shows "Payload signed", with one signature per key. Each shows its **Key version**, **Algorithm** and **Hex signature**. Click **Copy** to copy each one.
@@ -42,9 +46,8 @@ description: "Sign a message with every key in a key ring, once all your approve
 | What you see | What to do |
 |---|---|
 | "The payload is too large. Maximum size: 4 KB." | Shorten the payload to 4,096 bytes or fewer. |
-| **Sign payload** is greyed out, with "Signing is paused while this key ring is disabled." | [Enable the key ring](/kms/disable-or-delete-key), then try again. |
+| **Sign payload** is greyed out, with "Signing is paused while this key ring is disabled." | The key ring's account is archived. Unarchive it from [Manage accounts](/portfolio/manage-accounts) to sign with it. |
 | "Finish the active signing operation for … before starting another." | Wait for your open signing request to finish. You can run one at a time. |
-| "Signing cannot start because approvers are missing or another signing requirement is not met." | Check that your organization has a member with an enrolled iPhone. The key ring must not back a custody account. |
 | "Signing was not completed" | An approver rejected the request, it was cancelled, or it expired. Request a new signature. |
 | "Signing status unknown" | Don't submit it again. Check the request on the key ring's **Approvals** tab. |
-| "PEAK key rings do not support signing from the console yet." | Sign with your PEAK devices instead. |
+| "You are not permitted to sign with this key ring." | Ask a root key holder to sign. |

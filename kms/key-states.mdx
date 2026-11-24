@@ -1,28 +1,17 @@
 ---
 title: "Key states"
-description: "What each state of a key ring, key and key version means."
+description: "What each state of a key ring and key means."
 ---
-
-## Key rings and keys
 
 | State | Meaning | Can sign |
 |---|---|---|
-| **Provisioning** | The provider is creating the key. Key rings skip this state. | No |
+| **Provisioning** | Strongpoint is creating the key. Key rings skip this state. | No |
 | **Ready** | In use. | Yes |
-| **Disabled** | Paused. You can enable it again. | No |
-| **Scheduled delete** | Waiting to be deleted. You can cancel until the deadline, 30 days after you scheduled it. | No |
-| **Deleted** | Deleted for good. It can't be used again. | No |
-| **Provisioning failed** | The provider could not create the key. | No |
+| **Disabled** | The key ring's account is archived. It signs again once you unarchive the account. | No |
+| **Provisioning failed** | The key could not be created. | No |
 
-A ready key in a disabled key ring shows **Signing paused**. It signs again once you enable the key ring.
+A ready key in a disabled key ring shows **Signing paused**.
 
-## Key versions
-
-A version has the same states as a key. The **Versions** tab adds these labels:
-
-| Label | Meaning |
-|---|---|
-| **Current** | The version that signs. A key has one current version. If the key isn't ready, the label adds its state, for example **Current · Disabled**. |
-| **Rotated out** | A previous version, replaced by [rotation](/kms/rotate-key). It no longer signs. |
+On a key's **Versions** tab, **Current** marks the version that signs. If the key isn't ready, the label adds its state, for example **Current · Disabled**.
 
 Each version also shows what it can do: **Signs & verifies**, **Verify only** or **Unusable**.

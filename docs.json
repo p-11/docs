@@ -39,8 +39,8 @@
           "portfolio/overview",
           "portfolio/receive-funds",
           "portfolio/send-funds",
-          "portfolio/add-wallet",
-          "portfolio/manage-account",
+          "portfolio/manage-wallets",
+          "portfolio/manage-accounts",
           "portfolio/address-book",
           {
             "group": "Reference",
@@ -86,11 +86,7 @@
         "group": "Signing keys",
         "pages": [
           "kms/overview",
-          "kms/create-key-ring",
-          "kms/add-key",
           "kms/sign-payload",
-          "kms/rotate-key",
-          "kms/disable-or-delete-key",
           {
             "group": "Reference",
             "pages": [
@@ -165,7 +161,7 @@
     },
     {
       "source": "/portfolio/wallets",
-      "destination": "/portfolio/add-wallet"
+      "destination": "/portfolio/manage-wallets"
     },
     {
       "source": "/portfolio/addresses",
@@ -185,11 +181,35 @@
     },
     {
       "source": "/kms/key-versions",
-      "destination": "/kms/rotate-key"
+      "destination": "/kms/overview"
     },
     {
       "source": "/kms/providers",
       "destination": "/kms/algorithms-and-providers"
+    },
+    {
+      "source": "/portfolio/add-wallet",
+      "destination": "/portfolio/manage-wallets"
+    },
+    {
+      "source": "/portfolio/manage-account",
+      "destination": "/portfolio/manage-accounts"
+    },
+    {
+      "source": "/kms/create-key-ring",
+      "destination": "/kms/overview"
+    },
+    {
+      "source": "/kms/add-key",
+      "destination": "/kms/overview"
+    },
+    {
+      "source": "/kms/rotate-key",
+      "destination": "/kms/overview"
+    },
+    {
+      "source": "/kms/disable-or-delete-key",
+      "destination": "/kms/overview"
     }
   ]
 }
