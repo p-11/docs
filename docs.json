@@ -37,10 +37,10 @@
         "group": "Portfolio",
         "pages": [
           "portfolio/overview",
+          "portfolio/manage-accounts",
+          "portfolio/manage-wallets",
           "portfolio/receive-funds",
           "portfolio/send-funds",
-          "portfolio/manage-wallets",
-          "portfolio/manage-accounts",
           "portfolio/address-book",
           {
             "group": "Reference",

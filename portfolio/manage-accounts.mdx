@@ -1,19 +1,21 @@
 ---
 title: "Manage accounts"
-description: "Create, rename or archive an account, and change who approves its sends."
+description: "An account is the top level of your portfolio. Create one, then rename it, archive it or change who approves its sends."
 ---
-
-An account is the top level of your portfolio. It sets who can send its assets and who must approve, through its **Send** and **Manage** policies.
 
 ## Creating an account
 
+An account is the first thing you set up in Portfolio. Until you create one, there's nowhere to hold funds.
+
 <Info>Requires the Owner or Admin role.</Info>
 
-Go to **Portfolio** and click **Add account**, then follow [Create an account](/onboarding/create-account). Strongpoint creates the account's key ring for you.
+<Info>Requires approval from your organization's root key holders.</Info>
 
-A new account needs approval from your organization's root key holders. The account's operators also approve, because they hold the shares of the account's key ring.
+Go to **Portfolio** and click **Add account**, then follow [Create an account](/onboarding/create-account).
 
-{/* TK: Tyler (Nov 2026) says creating an account needs approval from the root key holders and from the account's operators, who receive shares of its key ring. In the code, creating the account raises no approval of its own: each wallet raises a Create Wallet approval under the Manage policy, and PEAK key ring holders contribute their shares. Root key holders approve only when a PEAK key ring is created, and in production the user must create that key ring on Signing keys before adding the account. */}
+Once the account is approved, Strongpoint provisions a new set of keys for it. The people approved to send from the account hold those keys. Each of them keeps a share on their iPhone, and no one holds a key whole.
+
+{/* TK: Tyler (Nov 2026) says creating an account needs approval from the root key holders, and that the account's keys are held by the people approved to send on it. In the code, creating the account raises no approval of its own: each wallet raises a Create Wallet approval under the Manage policy. Root key holders approve only when a PEAK key ring is created. The key ring's holders are chosen when that key ring is set up, on Signing keys, before the account is added; they aren't linked to who can send, and any Owner, Admin or Operator can start a send. */}
 
 ## Renaming an account
 

@@ -3,7 +3,9 @@ title: "Create an account"
 description: "Create an account to hold your assets, and choose who approves sending funds."
 ---
 
-<Info>Requires the Owner or Admin role. Your root key holders and the account's operators approve each new account.</Info>
+<Info>Requires the Owner or Admin role.</Info>
+
+<Info>Requires approval from your organization's root key holders.</Info>
 
 An account holds your assets in one or more wallets. When you create it, you choose who approves sending funds out of it. Adding wallets and archiving follow your organization's [policies](/policies-and-approvals/policies).
 
@@ -14,7 +16,7 @@ An account holds your assets in one or more wallets. When you create it, you cho
     Go to **Portfolio** and click **Add account**.
   </Step>
   <Step title="Name it and choose its assets">
-    Enter an **Account name**, for example "Treasury". Under **Select assets to manage**, choose the assets it will hold. Then click **Continue**. Strongpoint creates the account's [key ring](/kms/overview) for you.
+    Enter an **Account name**, for example "Treasury". Under **Select assets to manage**, choose the assets it will hold. Then click **Continue**. Once the account is approved, Strongpoint provisions its keys. The people approved to send from the account hold them.
   </Step>
   <Step title="Choose who approves sends">
     **Who can approve sends** starts with your organization default. To keep it, click **Continue**. To change it, click the pencil, choose approvers and **Approvals needed**, then click **Continue**.

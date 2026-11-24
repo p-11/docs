@@ -1,9 +1,7 @@
 ---
 title: "Receive funds"
-description: "Get a deposit address for an account and check when the funds arrive."
+description: "Funds arrive at the address of one of an account's wallets. Share that address, then check when the funds arrive."
 ---
-
-Funds arrive at a wallet's address. Each wallet holds an account's funds on one network.
 
 <Info>Any role can view deposit addresses. Receiving funds needs no approval.</Info>
 
@@ -36,7 +34,9 @@ Funds arrive at a wallet's address. Each wallet holds an account's funds on one 
 
 ## When the funds arrive
 
-Strongpoint checks each network about once a minute. A deposit appears on the account's **Activity** tab as **Receive**, with the status **Pending**. Once the network has confirmed it enough times, it shows **Received** and **Confirmed**, and counts toward the wallet's **Available** balance. A Zcash deposit needs 10 confirmations.
+Strongpoint checks each network about once a minute. A deposit appears on the account's **Activity** tab as **Receive**, with the status **Pending**. Once the network has confirmed it enough times, it shows **Received** and **Confirmed**, and counts toward the wallet's **Available** balance.
+
+Each network needs its own number of confirmations. For example, a Zcash deposit needs 10 confirmations, which takes about 13 minutes. See [Supported networks](/portfolio/supported-networks) for each network.
 
 ## If it does not work
 

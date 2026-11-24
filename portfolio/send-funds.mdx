@@ -1,9 +1,7 @@
 ---
 title: "Send funds"
-description: "Request a transfer out of an account. It goes out once your approvers approve it."
+description: "Funds leave an account from one of its wallets. Request a send, and it goes out once your approvers approve it."
 ---
-
-Funds leave an account from one of its wallets. The account's **Send** policy decides who must approve.
 
 <Info>Requires the Owner, Admin or Operator role. Each send is an approval request, decided by the account's **Send** policy.</Info>
 
@@ -14,9 +12,17 @@ Funds leave an account from one of its wallets. The account's **Send** policy de
 <Steps>
   <Step title="Open the send form">
     Go to **Portfolio**, open the account, and click **Send**.
+
+    <Frame caption="Figure 1: The account page, with Send at the top.">
+      <img src="/images/portfolio/console-account.png" alt="Treasury account page showing its balance, Deposit and Send buttons, and one Zcash wallet on the Wallet tab." style={{ maxWidth: "620px" }} />
+    </Frame>
   </Step>
   <Step title="Choose what to send and from where">
-    Under **Asset to send**, choose the asset. Under **Transfer from**, choose the wallet the funds leave from.
+    Under **Asset to send**, choose the asset. Under **Transfer from**, choose the wallet the funds leave from. The console shows the wallet's balance and address.
+
+    <Frame caption="Figure 2: The asset, and the wallet the funds leave from.">
+      <img src="/images/portfolio/console-send-source.png" alt="Send form with Zcash ZEC under Asset to send, and Zcash wallet #1 holding 1,000 ZEC under Transfer from, with its address below." style={{ maxWidth: "340px" }} />
+    </Frame>
   </Step>
   <Step title="Choose where it goes">
     Under **Transfer to**, choose one of these:
@@ -24,18 +30,24 @@ Funds leave an account from one of its wallets. The account's **Send** policy de
     - **Internal transfer** to send to another of your organization's wallets on the same network.
     - **Address book** to send to a saved address. See [Manage the address book](/portfolio/address-book).
     - **External transfer** to paste any other address.
+
+    Then choose or paste the destination.
+
+    <Frame caption="Figure 3: The three kinds of destination.">
+      <img src="/images/portfolio/console-send-destination.png" alt="Transfer to menu open on the send form, listing Internal transfer, Address book and External transfer." style={{ maxWidth: "340px" }} />
+    </Frame>
   </Step>
   <Step title="Enter the amount and a note">
     Enter the **Amount**, or click **Max** to send the full available balance. Under **Initiator note**, say what the send is for. Approvers see this note. Then click **Review transfer**.
 
-    <Frame caption="Figure 1: A send of 25 ZEC to a saved address.">
+    <Frame caption="Figure 4: A send of 25 ZEC to a saved address.">
       <img src="/images/portfolio/console-send-form.png" alt="Send form with Zcash ZEC selected, the source wallet, Address book chosen under Transfer to with the Settlement desk entry, an amount of 25 ZEC and an initiator note." style={{ maxWidth: "340px" }} />
     </Frame>
   </Step>
   <Step title="Review and request">
     Check the destination, amount, network and network fee. The review also shows how many approvals the send needs and from whom. Click **Request transfer**.
 
-    <Frame caption="Figure 2: The review shows the network fee and who must approve.">
+    <Frame caption="Figure 5: The review shows the network fee and who must approve.">
       <img src="/images/portfolio/console-send-review.png" alt="Send 25 ZEC review showing From, To, Amount, Network, Network fee, Initiator and Initiator note, and a line saying it needs 2 approvals and expires in 24 hours." style={{ maxWidth: "340px" }} />
     </Frame>
 
