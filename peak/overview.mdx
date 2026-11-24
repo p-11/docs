@@ -7,8 +7,6 @@ PEAK is how Strongpoint protects your organization's keys. Your organization has
 
 A separate backup key, kept on dedicated backup iPhones stored offline, can recover the root key if holders lose their shares.
 
-{/* TK: docs/peak/initial-deployment.md says production PEAK deploys are not supported on strongpoint main yet (ENG-3832). Confirm launch timing before publishing. */}
-
 ## Root key and backup key
 
 | Key | Held by | Used for |
@@ -17,6 +15,18 @@ A separate backup key, kept on dedicated backup iPhones stored offline, can reco
 | **Backup key** | 3 to 30 dedicated backup iPhones, kept off and stored apart | Recovering the root key |
 
 Any member with an enrolled iPhone can hold a share, whatever their role. Holders approve PEAK requests on their iPhone like any other approval.
+
+## How PEAK protects your keys
+
+- **Split into shares.** PEAK splits each key into shares with a threshold, for example 2 of 3. Any 2 shares can rebuild the key, and 1 share on its own reveals nothing about it.
+- **Rebuilt only in a sealed enclave.** A key is rebuilt only inside an AWS Nitro Enclave, a sealed environment that the rest of Strongpoint's systems can't see into. The enclave rebuilds the key for one operation, uses it, then erases it. No server, iPhone or person ever holds a whole key.
+- **Checked before every share is released.** Before your iPhone releases its share, it checks that the enclave is running software Strongpoint has approved. The share is encrypted for that enclave alone. Strongpoint's servers pass it on, but can't read it.
+- **Each account has its own holders.** Every account's [key ring](/kms/overview) is derived from your root key and has its own holders and threshold. Root key holders approve creating a key ring, but don't take part when an account signs.
+- **Two checks on every send.** Your approvers approve the send under the account's **Send** policy. Then enough of the key ring's holders release their shares so the enclave can sign.
+- **Protected against future quantum attacks.** Shares travel under hybrid classical and post-quantum encryption, and PEAK's own messages carry both a classical and a post-quantum signature. An attacker who records them today can't decrypt them later with a quantum computer. This protects PEAK itself. Whether a blockchain signature is quantum-safe depends on the algorithms that blockchain supports.
+- **Ready for new algorithms.** A key ring can derive keys for several signing algorithms, so adding a new algorithm doesn't mean handing out new shares.
+
+Losing one iPhone doesn't stop your organization. Signing continues as long as enough holders remain to meet the threshold. If too many root key holders lose their iPhones, [recover the root key](/peak/recover-root-key) from the backup key.
 
 ## Setting up your organization
 

@@ -110,14 +110,20 @@
         ]
       },
       {
-        "group": "PEAK",
+        "group": "PEAK setup",
         "pages": [
           "peak/overview",
           "peak/set-up-root-key",
           "peak/accept-key-share",
           "peak/set-up-backup-key",
           "peak/test-root-key",
-          "peak/recover-root-key"
+          "peak/recover-root-key",
+          {
+            "group": "Technical docs",
+            "pages": [
+              "peak/litepaper"
+            ]
+          }
         ]
       },
       {
