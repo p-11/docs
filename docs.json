@@ -123,6 +123,13 @@
         ]
       },
       {
+        "group": "Audit trail",
+        "pages": [
+          "audit/overview",
+          "audit/export-audit-log"
+        ]
+      },
+      {
         "group": "Reference",
         "pages": [
           "reference/changelog"
