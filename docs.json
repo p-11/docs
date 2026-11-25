@@ -41,7 +41,6 @@
           "portfolio/manage-wallets",
           "portfolio/receive-funds",
           "portfolio/send-funds",
-          "portfolio/address-book",
           {
             "group": "Reference",
             "pages": [
@@ -52,10 +51,22 @@
         ]
       },
       {
-        "group": "Organization",
+        "group": "Address book",
         "pages": [
-          "organisation/users",
+          "address-book/overview",
+          "address-book/add-address",
+          "address-book/rename-or-archive",
+          "address-book/restrict-sends"
+        ]
+      },
+      {
+        "group": "Team",
+        "pages": [
+          "organisation/overview",
+          "onboarding/invite-users",
           "organisation/send-device-enrollment",
+          "organisation/revoke-device",
+          "organisation/change-role",
           "organisation/roles-and-permissions"
         ]
       },
@@ -97,6 +108,24 @@
         ]
       },
       {
+        "group": "PEAK setup",
+        "pages": [
+          "peak/overview",
+          "peak/set-up-root-key",
+          "peak/accept-key-share",
+          "peak/set-up-backup-key",
+          "peak/test-root-key",
+          "peak/recover-root-key",
+          {
+            "group": "Technical docs",
+            "pages": [
+              "peak/how-peak-works",
+              "peak/litepaper"
+            ]
+          }
+        ]
+      },
+      {
         "group": "Audit trail",
         "pages": [
           "audit/overview",
@@ -106,8 +135,7 @@
       {
         "group": "Reference",
         "pages": [
-          "reference/changelog",
-          "reference/peak"
+          "reference/changelog"
         ]
       }
     ]
@@ -193,6 +221,18 @@
     {
       "source": "/kms/providers",
       "destination": "/kms/algorithms-and-providers"
+    },
+    {
+      "source": "/organisation/users",
+      "destination": "/organisation/overview"
+    },
+    {
+      "source": "/reference/peak",
+      "destination": "/peak/overview"
+    },
+    {
+      "source": "/portfolio/address-book",
+      "destination": "/address-book/overview"
     },
     {
       "source": "/portfolio/add-wallet",

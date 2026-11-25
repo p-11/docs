@@ -1,0 +1,67 @@
+---
+title: "Set up the backup key"
+description: "Choose the backup holders, enroll their backup iPhones, and create the backup key."
+---
+
+<Info>Requires the Owner role. The root key must be active first.</Info>
+
+The backup key is a second copy of your root key, split into shares across backup iPhones. If too many root key holders lose their shares, the backup iPhones can [recover the root key](/peak/recover-root-key).
+
+Each backup holder needs a backup iPhone:
+
+- A backup iPhone must be a separate device. It can't be the iPhone that holds its owner's regular root key share.
+- Store backup iPhones powered off and in a safe location.
+- Use them only if the root key needs to be recovered, or to [test the backup key](/peak/test-root-key#testing-the-backup-key).
+
+{/* TK: add console screenshots of choosing backup holders and creating the backup key. The production snapshot has no organization at this stage of setup. */}
+
+## Choosing the backup holders
+
+<Steps>
+  <Step title="Pick the holders">
+    Go to **Signing keys**, open **Root key**, and select **Backup**. Click **Set backup iPhones**, pick between 3 and 30 people, and review. Strongpoint sets how many backup iPhones must approve a recovery.
+  </Step>
+  <Step title="Request their enrollments">
+    Click **Request device enrollment for all**. Once approvers approve, each holder gets an enrollment link by email.
+  </Step>
+</Steps>
+
+## Enrolling a backup iPhone
+
+<Steps>
+  <Step title="Scan the QR code">
+    The backup holder opens their enrollment link on a computer. On the backup iPhone, they scan the QR code with the Strongpoint Authenticator.
+  </Step>
+  <Step title="Enter the code">
+    They type the six-digit code the app shows into the console. They get one try at the code.
+  </Step>
+  <Step title="Wait for approval">
+    An approver approves the backup iPhone. The app then shows "Backup iPhone ready".
+  </Step>
+</Steps>
+
+## Creating the backup key
+
+<Steps>
+  <Step title="Request the backup key">
+    Once every backup iPhone is enrolled, click **Create backup key**. Check the holders, then click **Confirm and request backup key**.
+  </Step>
+  <Step title="Backup iPhones approve">
+    Every backup iPhone must approve creating the backup key. Each backup holder approves on their backup iPhone.
+  </Step>
+  <Step title="Root key holders approve">
+    Your root key holders approve creating the backup key on their everyday iPhones.
+  </Step>
+  <Step title="Backup holders accept their shares">
+    Strongpoint creates the backup key and sends each backup iPhone its share. Each backup holder [accepts their share](/peak/accept-key-share), then powers the backup iPhone off and puts it away.
+  </Step>
+</Steps>
+
+## If it does not work
+
+| What you see | What to do |
+|---|---|
+| "Use a dedicated iPhone" | The holder used their everyday iPhone. Enroll a different iPhone as the backup iPhone. |
+| "This iPhone can't be a backup iPhone" | Turn on Face ID or Touch ID on the backup iPhone, then try again. |
+| "Only owners choose the backup holders and create the backup key." | Ask an Owner. |
+| **Custody paused** | Too few backup iPhones remain to recover the root key. Click **Review backup** and enroll replacements. |
