@@ -60,12 +60,14 @@
         ]
       },
       {
-        "group": "Organization",
+        "group": "Team",
         "pages": [
-          "organisation/users",
+          "organisation/overview",
+          "onboarding/invite-users",
           "organisation/send-device-enrollment",
-          "organisation/roles-and-permissions",
-          "organisation/change-role"
+          "organisation/revoke-device",
+          "organisation/change-role",
+          "organisation/roles-and-permissions"
         ]
       },
       {
@@ -117,6 +119,7 @@
           {
             "group": "Technical docs",
             "pages": [
+              "peak/how-peak-works",
               "peak/litepaper"
             ]
           }
@@ -218,6 +221,10 @@
     {
       "source": "/kms/providers",
       "destination": "/kms/algorithms-and-providers"
+    },
+    {
+      "source": "/organisation/users",
+      "destination": "/organisation/overview"
     },
     {
       "source": "/reference/peak",

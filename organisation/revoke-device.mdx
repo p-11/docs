@@ -1,0 +1,41 @@
+---
+title: "Revoke a device"
+description: "Stop an iPhone from approving requests, for example when it's lost or replaced."
+---
+
+<Info>Requires the Owner or Admin role. Revoking takes effect right away, with no approval.</Info>
+
+## Revoking a device
+
+<Steps>
+  <Step title="Open the member">
+    Go to **Team** and click the member. Their enrolled devices are listed under **Enrolled devices**.
+  </Step>
+  <Step title="Revoke the device">
+    Click **…** next to the device, then **Revoke device**. Check the device name, then click **Revoke**.
+
+    The device can no longer approve requests for the member. To keep approving, the member needs a new device enrollment.
+  </Step>
+  <Step title="Enroll a replacement">
+    [Send a device enrollment](/organisation/send-device-enrollment) so the member can enroll a new iPhone.
+  </Step>
+</Steps>
+
+{/* TK: add a screenshot of the Revoke this device? dialog with the root key share warning. The production snapshot couldn't open a member's device list. */}
+
+## If the member holds a root key share
+
+The revoke dialog warns you that the member holds a root key share. Their share is lost with the device, so:
+
+1. Revoke the device. The console asks you to request a device enrollment for the member. Click **Request device enrollment**, or **Later** to do it from **Team**.
+2. Once the member enrolls their new iPhone and it's approved, Strongpoint reshares the root key. Every holder gets a new share and accepts it on their iPhone.
+
+Your root key keeps working while you do this, as long as enough holders still have their shares. If too few holders are left to approve, you need to [recover the root key](/peak/recover-root-key) from the backup key instead. The dialog tells you when that's the case.
+
+## If it does not work
+
+| What you see | What to do |
+|---|---|
+| "This is your only active regular device." | Enroll another iPhone before you revoke this one, or you won't be able to log in or approve. |
+| "This is their only active regular device and they are an approver on an approval policy." | Remove the member from those policies first. See [Change a policy](/policies-and-approvals/change-policy). |
+| "The server denied this action." | Your role can't revoke devices. Ask an Owner or Admin. |

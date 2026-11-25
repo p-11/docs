@@ -1,13 +1,31 @@
 ---
-title: "Test the root key"
-description: "Check that every holder can still use their share, without running anything."
+title: "Test your keys"
+description: "Check that your root key holders and backup iPhones can still use their shares."
 ---
 
-<Info>Requires the Owner role. The root key must be active.</Info>
+<Info>Requires the Owner role. The key you test must be active.</Info>
 
-A test asks every holder to approve a request that does nothing else. It passes once all holders approve, and confirms each share still works.
+A test is a liveness check. It asks every holder to approve a request that changes nothing, and passes once they all do. A passing test shows that your key is still set up the way you think it is.
+
+## Testing the backup key
+
+Test your backup key at least once every six months. Backup iPhones stay powered off and stored away, so a test is the only way to know they still work. If one doesn't, you have less protection than you planned for, and you need to replace it before you ever need a recovery.
+
+<Steps>
+  <Step title="Start the test">
+    Go to **Signing keys**, open **Root key**, and select **Backup**. Under **Test your backup key**, click **Test backup key**, then **Start test**.
+  </Step>
+  <Step title="Backup holders approve">
+    Each backup holder powers on their backup iPhone and approves the test on it. The test expires after 30 minutes.
+  </Step>
+  <Step title="Check the result">
+    The **Backup** tab shows whether the test passed. Afterwards, holders power their backup iPhones off and put them away.
+  </Step>
+</Steps>
 
 ## Testing the root key
+
+Your root key holders use their shares whenever an account is created, so a problem usually shows up on its own. You can still test the root key at any time, for example after a holder changes iPhones.
 
 <Steps>
   <Step title="Start the test">
@@ -21,11 +39,12 @@ A test asks every holder to approve a request that does nothing else. It passes 
   </Step>
 </Steps>
 
-To test the backup key, open **Backup** and use **Test your backup key** the same way. To stop a running test, click **Abort test**.
+To stop a running test, click **Abort test**.
 
 ## If it does not work
 
 | What you see | What to do |
 |---|---|
 | "A test of this key is already open." | Abort the open test first, or wait for it to finish. |
-| The test didn't pass | A holder declined, didn't respond in time, or their share failed. Ask them to check their iPhone, and replace the holder if needed. |
+| The test didn't pass | A holder declined, didn't respond in time, or their share failed. Check with them. If their iPhone no longer works, [revoke it](/organisation/revoke-device) and enroll a replacement. |
+| "Too few holders are available, so a test cannot reach its approvals." | Check that enough holders still have an active iPhone. |

@@ -5,7 +5,14 @@ description: "Restore the root key to a new group of holders with the backup key
 
 <Info>Requires the Owner role, and an active backup key.</Info>
 
-If root key holders lose their shares, the backup iPhones can restore the root key to a new group of holders.
+A recovery restores your root key from the backup iPhones to a new group of holders. You only need one when too many root key holders lose their shares at once.
+
+## Recovery or reshare?
+
+It depends on how many holders still have their shares.
+
+- **Enough holders still have their shares.** For example, one holder of a 2-of-3 root key loses their iPhone. You don't need the backup iPhones. [Revoke the lost iPhone](/organisation/revoke-device) and enroll a new one. Strongpoint then reshares the root key, and every holder accepts a new share.
+- **Too few holders still have their shares.** For example, two holders of a 2-of-3 root key lose their iPhones. The remaining holders can't approve a reshare, so you need a recovery from the backup iPhones.
 
 ## Requesting a recovery
 

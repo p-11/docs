@@ -1,43 +1,36 @@
 ---
-title: "PEAK"
+title: "PEAK setup"
 sidebarTitle: "Overview"
 ---
 
-PEAK is how Strongpoint protects your organization's keys. Your organization has one root key, and no one ever holds it whole: it is split into shares, and each holder keeps a share on their iPhone. Using the root key needs approval from enough holders.
+Strongpoint uses PEAK to protect your organization's keys. Your organization has a single root key, and every wallet and address you use on Strongpoint is derived from it. No one person ever holds the whole root key.
 
-A separate backup key, kept on dedicated backup iPhones stored offline, can recover the root key if holders lose their shares.
+<Info>Your root key protects all the funds you hold on Strongpoint. PEAK stores it so that no single person, iPhone or server can use it alone.</Info>
 
-## Root key and backup key
+## Where your root key is stored
 
-| Key | Held by | Used for |
+Your root key is split into shares, and the shares are stored in two places:
+
+| | Root key holders | Backup iPhones |
 |---|---|---|
-| **Root key** | 3 to 30 members, each on their everyday iPhone | Creating accounts and key rings, and creating the backup key |
-| **Backup key** | 3 to 30 dedicated backup iPhones, kept off and stored apart | Recovering the root key |
+| **Who** | 3 to 30 members you choose | 3 to 30 separate iPhones, one per backup holder |
+| **On** | Each holder's everyday iPhone | A dedicated iPhone, powered off and kept somewhere safe |
+| **Used for** | Creating accounts and their keys, and creating the backup key | Recovering the root key if too many holders lose their shares |
 
-Any member with an enrolled iPhone can hold a share, whatever their role. Holders approve PEAK requests on their iPhone like any other approval.
+Keeping the root key in both places means you can always get it back, and no single lost or stolen iPhone is enough to use it. Any member with an enrolled iPhone can hold a share, whatever their role.
 
-## How PEAK protects your keys
+## Setting up your organization with PEAK
 
-- **Split into shares.** PEAK splits each key into shares with a threshold, for example 2 of 3. Any 2 shares can rebuild the key, and 1 share on its own reveals nothing about it.
-- **Rebuilt only in a sealed enclave.** A key is rebuilt only inside an AWS Nitro Enclave, a sealed environment that the rest of Strongpoint's systems can't see into. The enclave rebuilds the key for one operation, uses it, then erases it. No server, iPhone or person ever holds a whole key.
-- **Checked before every share is released.** Before your iPhone releases its share, it checks that the enclave is running software Strongpoint has approved. The share is encrypted for that enclave alone. Strongpoint's servers pass it on, but can't read it.
-- **Each account has its own holders.** Every account's [key ring](/kms/overview) is derived from your root key and has its own holders and threshold. Root key holders approve creating a key ring, but don't take part when an account signs.
-- **Two checks on every send.** Your approvers approve the send under the account's **Send** policy. Then enough of the key ring's holders release their shares so the enclave can sign.
-- **Protected against future quantum attacks.** Shares travel under hybrid classical and post-quantum encryption, and PEAK's own messages carry both a classical and a post-quantum signature. An attacker who records them today can't decrypt them later with a quantum computer. This protects PEAK itself. Whether a blockchain signature is quantum-safe depends on the algorithms that blockchain supports.
-- **Ready for new algorithms.** A key ring can derive keys for several signing algorithms, so adding a new algorithm doesn't mean handing out new shares.
+<Warning>Until PEAK setup is complete, you can't create accounts or deposit funds.</Warning>
 
-Losing one iPhone doesn't stop your organization. Signing continues as long as enough holders remain to meet the threshold. If too many root key holders lose their iPhones, [recover the root key](/peak/recover-root-key) from the backup key.
-
-## Setting up your organization
-
-Until setup is finished, an **Org setup** card in the sidebar shows each step and who it's waiting on. Portfolio appears once the root key and backup key are both in place.
+An **Org setup** card in the sidebar guides you through PEAK setup and shows who each step is waiting on. Once the root key and backup key are both in place, **Portfolio** appears and you can [create your first account](/portfolio/manage-accounts).
 
 | Step | What happens | Who |
 |---|---|---|
 | **Invite members** | Invite at least 2 more people. | Owner or Admin |
 | **Device enrollment** | At least 3 members enroll their iPhones. | New members, then approvers |
 | **Set up root key** | Choose the holders. Every holder approves, then accepts their share. | Owner, then holders |
-| **Enroll backup iPhones** | Each backup holder pairs a dedicated backup iPhone. | Backup holders |
+| **Enroll backup iPhones** | Each backup holder enrolls a separate backup iPhone. | Backup holders |
 | **Set up backup key** | Root key holders and every backup iPhone approve, then the backup iPhones accept their shares. | Owner, then holders |
 
 ## Who can do what
@@ -52,16 +45,18 @@ Until setup is finished, an **Org setup** card in the sidebar shows each step an
   <Card title="Set up the root key" icon="key" href="/peak/set-up-root-key">
     Choose the holders and request the root key.
   </Card>
-  <Card title="Accept your key share" icon="mobile" href="/peak/accept-key-share">
-    Approve and receive your share on your iPhone.
+  <Card title="Approve and accept your key share" icon="mobile" href="/peak/accept-key-share">
+    Approve the request and receive your share on your iPhone.
   </Card>
   <Card title="Set up the backup key" icon="box-archive" href="/peak/set-up-backup-key">
     Enroll backup iPhones and create the backup key.
   </Card>
-  <Card title="Test the root key" icon="vial" href="/peak/test-root-key">
-    Check that every holder can still use their share.
+  <Card title="Test your keys" icon="vial" href="/peak/test-root-key">
+    Check that holders and backup iPhones can still use their shares.
   </Card>
   <Card title="Recover the root key" icon="life-ring" href="/peak/recover-root-key">
-    Restore the root key to new holders.
+    Restore the root key from the backup iPhones.
   </Card>
 </CardGroup>
+
+To learn how PEAK keeps your keys safe, see [How PEAK works](/peak/how-peak-works).

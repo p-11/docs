@@ -16,14 +16,22 @@ description: "Choose who holds your organization's root key, and request it."
     </Frame>
   </Step>
   <Step title="Choose the holders">
-    Under **Holders**, pick between 3 and 30 members. Each holder keeps a share on their iPhone. Members without an enrolled iPhone show **No iPhone** and can't be picked. Then click **Continue**.
+    Under **Holders**, pick between 3 and 30 members. Each holder keeps a share on their iPhone. Then click **Continue**.
+
+    Only members with an enrolled iPhone can be picked. If someone you want as a holder shows **No iPhone**, ask them to [enroll their iPhone](/onboarding/enroll-iphone) first.
 
     <Frame caption="Figure 2: Three holders, each with an enrolled iPhone.">
       <img src="/images/peak/console-root-holders.png" alt="Select who holds the root key step with three holders picked, and Back, Cancel and Continue buttons." style={{ maxWidth: "340px" }} />
     </Frame>
   </Step>
-  <Step title="Choose how many must approve">
+  <Step title="Choose how many holders must approve">
     Under **Approvals needed**, choose how many holders must approve each use of the root key. The default is a majority, and the minimum is 2. Then click **Continue**.
+
+    Holders approve each time the root key is used, which is when someone:
+
+    - creates an account, and with it the account's keys
+    - creates the backup key
+    - reshares the root key, for example after a holder replaces their iPhone
   </Step>
   <Step title="Review and request">
     Check the holders and the approval policy, then click **Confirm and request root key**.

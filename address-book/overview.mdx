@@ -3,9 +3,17 @@ title: "Address book"
 sidebarTitle: "Overview"
 ---
 
-The address book holds the external addresses your organization sends to, each saved under a name, such as an exchange account or a partner's wallet. When you [send funds](/portfolio/send-funds), you pick a saved address by name, and approvers see that name on the request.
+When you [send funds](/portfolio/send-funds), you choose one of three kinds of destination:
 
-Every change to the address book is an approval request, so a new destination can't be used until your approvers agree.
+- **Internal transfer** sends to another of your organization's wallets on Strongpoint.
+- **Address book** sends to an external address your organization has saved and approved.
+- **External transfer** sends to any other external address, pasted in at send time.
+
+The address book is where you keep the trusted external addresses you send to regularly, such as an exchange account or a partner's wallet. It gives you three things:
+
+- **Saved, named addresses.** You pick an address by name instead of pasting it, and approvers see that name on the send.
+- **An extra approval.** Adding an address to the address book is an approval request of its own. Approvers check the address once when it's saved, on top of checking each send.
+- **An optional restriction.** You can [allow external sends only to saved addresses](/address-book/restrict-sends), so no one can paste an unknown address.
 
 To open it, click your name at the bottom of the sidebar, then **Settings**. The address book is the first tab.
 
@@ -50,6 +58,6 @@ An address with no status is ready to use. If a pending request waits for your a
     Change a name, or retire an address.
   </Card>
   <Card title="Restrict sends to the address book" icon="lock" href="/address-book/restrict-sends">
-    Allow sends only to saved addresses.
+    Allow sends only within Strongpoint or to saved addresses.
   </Card>
 </CardGroup>

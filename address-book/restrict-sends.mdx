@@ -1,20 +1,30 @@
 ---
 title: "Restrict sends to the address book"
-description: "Allow sends only to your own wallets and saved addresses."
+description: "Allow sends only within Strongpoint, or to saved addresses."
 ---
 
 <Info>Requires the Owner or Admin role. Turning the setting on or off is an approval request, decided by your **Change approval rule** policy.</Info>
 
-When **Only send to the address book** is on, sends can go only to your own wallets and to saved addresses. **External transfer** no longer appears when you [send funds](/portfolio/send-funds).
+When **Only send to the address book** is on, sends can go only to your organization's wallets on Strongpoint and to saved addresses. **External transfer** no longer appears as an option when you [send funds](/portfolio/send-funds).
 
 ## Changing the setting
 
 <Steps>
-  <Step title="Find the switch">
-    Click your name at the bottom of the sidebar, then **Settings**. On **Address book**, the switch is below the list of addresses.
+  <Step title="Open the address book">
+    Click your name at the bottom of the sidebar, then **Settings**. The address book is the first tab.
+  </Step>
+  <Step title="Locate the switch">
+    Scroll below the list of addresses to **Only send to the address book**.
+
+    <Frame caption="Figure 1: The switch is below the list of saved addresses.">
+      <img src="/images/address-book/console-send-restriction.png" alt="Only send to the address book switch, turned off, with the note that sends can go only to your own wallet addresses and your address book entries." style={{ maxWidth: "560px" }} />
+    </Frame>
   </Step>
   <Step title="Turn it on or off">
-    Click **Only send to the address book**. The switch shows "Turning on · awaiting approvals" or "Turning off · awaiting approvals", and stays locked until approvers decide.
+    Click the switch. It shows "Turning on · awaiting approvals" or "Turning off · awaiting approvals", and stays locked until approvers decide.
+  </Step>
+  <Step title="Wait for approvals">
+    The change doesn't take effect until enough approvers approve it under your [**Change approval rule** policy](/policies-and-approvals/policies). Follow the request on the **Approvals** page.
   </Step>
 </Steps>
 
