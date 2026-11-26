@@ -119,8 +119,7 @@
           {
             "group": "Technical docs",
             "pages": [
-              "peak/how-peak-works",
-              "peak/litepaper"
+              "peak/how-peak-works"
             ]
           }
         ]
@@ -257,6 +256,10 @@
     {
       "source": "/kms/disable-or-delete-key",
       "destination": "/kms/overview"
+    },
+    {
+      "source": "/peak/litepaper",
+      "destination": "/peak/how-peak-works"
     }
   ]
 }
